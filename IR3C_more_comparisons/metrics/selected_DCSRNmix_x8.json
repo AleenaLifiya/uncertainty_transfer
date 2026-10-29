@@ -1,0 +1,36 @@
+{
+  "selected_step": 8757,
+  "selected_epoch": 0,
+  "selected_path": "checkpoints/DCSRN/DCSRNmix_x8/DCSRNmix_x8_step008757.pt",
+  "selected_macro_psnr": 17.830681638862234,
+  "selected_macro_ssim": 0.8341987994600417,
+  "n_candidates": 11,
+  "n_eligible": 1,
+  "criterion": "max macro brain-masked PSNR on missing slices, guardrail macro_ssim >= linear_macro_ssim - 0.01",
+  "method": "DCSRNmix_x8",
+  "stop_reason": "budget_exhausted",
+  "stopped_at_step": 12510,
+  "total_steps_planned": 12510,
+  "training_hours": 1.0662907642788357,
+  "peak_gpu_gb": 18.653929472,
+  "still_improving_at_stop": false,
+  "budget": {
+    "total_steps": 12510,
+    "val_every": 1251,
+    "patience": 4,
+    "warmup_steps": 0,
+    "n_validations": 10
+  },
+  "checkpoint_dir": "checkpoints/DCSRN/DCSRNmix_x8",
+  "inference_mode": "whole_volume",
+  "superseded_guardrail_selection": {
+    "selected_step": 0,
+    "selected_path": "checkpoints/DCSRN/DCSRNmix_x8/DCSRNmix_x8_step000000.pt",
+    "selected_macro_psnr": 5.499709224514126,
+    "selected_macro_ssim": 0.750034714890993,
+    "n_eligible": 1
+  },
+  "guardrail_rejected_all_trained": true,
+  "guardrail_fallback_applied": true,
+  "selection_note": "The shared SSIM guardrail (macro_ssim >= linear_macro_ssim - 0.01) rejected EVERY trained checkpoint, leaving only the untrained step-0 reference, which is not a result for the method. The checkpoint reported is the one with the highest VALIDATION macro brain-masked PSNR among trained checkpoints; the guardrail outcome is preserved in superseded_guardrail_selection."
+}

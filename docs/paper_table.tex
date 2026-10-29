@@ -1,0 +1,46 @@
+\begin{table*}[t]
+\centering
+\caption{Coverage of the 90\,\% intervals on test data (\%; best is 90, $\rightarrow$90) with mean\,$\pm$\,SD over three
+fine-tuning seeds (linear interpolation has no seed). All intervals were calibrated on uniform sampling only. Change:
+clustered minus uniform coverage in percentage points (best is 0, $\rightarrow$0). ENCE: expected normalized calibration
+error on clustered sampling (lower is better, $\downarrow$).}
+\label{tab:main}
+\setlength{\tabcolsep}{1.5pt}\footnotesize
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll ccccc c ccccc@{}}
+\toprule
+& & \multicolumn{5}{c}{$\times4$} && \multicolumn{5}{c}{$\times8$}\\
+\cmidrule(lr){3-7}\cmidrule(lr){9-13}
+& & \multicolumn{3}{c}{Coverage (\%) $\rightarrow$90} & & && \multicolumn{3}{c}{Coverage (\%) $\rightarrow$90} & & \\
+\cmidrule(lr){3-5}\cmidrule(lr){9-11}
+Reconstruction & Uncertainty & Uniform & Jittered & Clustered & Change $\rightarrow$0 & ENCE $\downarrow$ && Uniform & Jittered & Clustered & Change $\rightarrow$0 & ENCE $\downarrow$\\
+\midrule
+\multicolumn{13}{@{}l}{\textbf{BraTS 2023 glioma FLAIR (51 test patients)}}\\
+SAINT-P & learned & 87{\tiny$\pm$0.1} & 82{\tiny$\pm$0.2} & 64{\tiny$\pm$0.4} & $-$23{\tiny$\pm$0.3} & 1.68{\tiny$\pm$0.04} &  & 88{\tiny$\pm$0.1} & 83{\tiny$\pm$0.3} & 69{\tiny$\pm$0.4} & $-$19{\tiny$\pm$0.3} & 1.04{\tiny$\pm$0.02} \\
+SAINT-P & learned + geometry & 87{\tiny$\pm$0.1} & 83{\tiny$\pm$0.1} & 75{\tiny$\pm$1.1} & $-$12{\tiny$\pm$1.1} & 0.78{\tiny$\pm$0.05} &  & 88{\tiny$\pm$0.1} & 84{\tiny$\pm$0.2} & 85{\tiny$\pm$0.1} & $-$3{\tiny$\pm$0.0} & 0.30{\tiny$\pm$0.01} \\
+SAINT-P & post hoc & 87{\tiny$\pm$0.0} & 80{\tiny$\pm$0.2} & 59{\tiny$\pm$0.5} & $-$29{\tiny$\pm$0.5} & 1.93{\tiny$\pm$0.04} &  & 89{\tiny$\pm$0.0} & 81{\tiny$\pm$0.2} & 64{\tiny$\pm$0.4} & $-$25{\tiny$\pm$0.4} & 1.40{\tiny$\pm$0.03} \\
+SAINT-P & post hoc + geometry & 87{\tiny$\pm$0.0} & 82{\tiny$\pm$0.1} & 82{\tiny$\pm$0.1} & $-$6{\tiny$\pm$0.1} & 0.49{\tiny$\pm$0.01} &  & 89{\tiny$\pm$0.0} & 84{\tiny$\pm$0.1} & 88{\tiny$\pm$0.0} & $-$1{\tiny$\pm$0.0} & 0.25{\tiny$\pm$0.00} \\
+\addlinespace[2pt]
+ArSSR-P & learned & 92{\tiny$\pm$0.1} & 90{\tiny$\pm$0.1} & 63{\tiny$\pm$1.2} & $-$30{\tiny$\pm$1.3} & 1.14{\tiny$\pm$0.09} &  & 91{\tiny$\pm$0.3} & 88{\tiny$\pm$0.0} & 49{\tiny$\pm$1.2} & $-$42{\tiny$\pm$1.2} & 2.30{\tiny$\pm$0.14} \\
+ArSSR-P & learned + geometry & 93{\tiny$\pm$0.2} & 90{\tiny$\pm$0.2} & 68{\tiny$\pm$2.1} & $-$24{\tiny$\pm$2.1} & 0.88{\tiny$\pm$0.11} &  & 91{\tiny$\pm$0.3} & 89{\tiny$\pm$0.1} & 55{\tiny$\pm$1.9} & $-$36{\tiny$\pm$1.7} & 1.80{\tiny$\pm$0.18} \\
+ArSSR-P & post hoc & 88{\tiny$\pm$0.1} & 87{\tiny$\pm$0.1} & 74{\tiny$\pm$0.4} & $-$14{\tiny$\pm$0.5} & 0.82{\tiny$\pm$0.01} &  & 88{\tiny$\pm$0.1} & 87{\tiny$\pm$0.2} & 76{\tiny$\pm$0.4} & $-$12{\tiny$\pm$0.4} & 0.70{\tiny$\pm$0.02} \\
+ArSSR-P & post hoc + geometry & 88{\tiny$\pm$0.1} & 87{\tiny$\pm$0.1} & 84{\tiny$\pm$0.8} & $-$4{\tiny$\pm$0.8} & 0.42{\tiny$\pm$0.02} &  & 88{\tiny$\pm$0.1} & 88{\tiny$\pm$0.2} & 86{\tiny$\pm$0.8} & $-$2{\tiny$\pm$0.7} & 0.32{\tiny$\pm$0.03} \\
+\addlinespace[2pt]
+Linear & post hoc & 88 & 86 & 74 & $-$14 & 0.89 &  & 89 & 87 & 78 & $-$10 & 0.62 \\
+Linear & post hoc + geometry & 88 & 88 & 90 & $+$2 & 0.29 &  & 89 & 89 & 93 & $+$5 & 0.27 \\
+\midrule
+\multicolumn{13}{@{}l}{\textbf{IXI-tiny T1 (60 test patients)}}\\
+SAINT-P & learned & 91{\tiny$\pm$0.0} & 85{\tiny$\pm$0.1} & 67{\tiny$\pm$0.3} & $-$25{\tiny$\pm$0.3} & 0.96{\tiny$\pm$0.01} &  & 91{\tiny$\pm$0.0} & 84{\tiny$\pm$0.1} & 71{\tiny$\pm$0.2} & $-$20{\tiny$\pm$0.2} & 0.77{\tiny$\pm$0.00} \\
+SAINT-P & learned + geometry & 91{\tiny$\pm$0.0} & 86{\tiny$\pm$0.3} & 81{\tiny$\pm$1.6} & $-$10{\tiny$\pm$1.6} & 0.39{\tiny$\pm$0.06} &  & 91{\tiny$\pm$0.1} & 85{\tiny$\pm$0.5} & 86{\tiny$\pm$0.2} & $-$5{\tiny$\pm$0.2} & 0.37{\tiny$\pm$0.02} \\
+SAINT-P & post hoc & 91{\tiny$\pm$0.0} & 82{\tiny$\pm$0.0} & 61{\tiny$\pm$0.0} & $-$30{\tiny$\pm$0.0} & 1.36{\tiny$\pm$0.00} &  & 91{\tiny$\pm$0.0} & 82{\tiny$\pm$0.0} & 66{\tiny$\pm$0.0} & $-$25{\tiny$\pm$0.0} & 1.12{\tiny$\pm$0.00} \\
+SAINT-P & post hoc + geometry & 91{\tiny$\pm$0.0} & 85{\tiny$\pm$0.0} & 78{\tiny$\pm$0.0} & $-$13{\tiny$\pm$0.0} & 0.47{\tiny$\pm$0.00} &  & 91{\tiny$\pm$0.0} & 84{\tiny$\pm$0.0} & 84{\tiny$\pm$0.0} & $-$7{\tiny$\pm$0.0} & 0.36{\tiny$\pm$0.00} \\
+\addlinespace[2pt]
+ArSSR-P & learned & 90{\tiny$\pm$0.1} & 89{\tiny$\pm$0.1} & 75{\tiny$\pm$0.7} & $-$15{\tiny$\pm$0.6} & 0.54{\tiny$\pm$0.03} &  & 90{\tiny$\pm$0.0} & 88{\tiny$\pm$0.1} & 74{\tiny$\pm$0.7} & $-$17{\tiny$\pm$0.6} & 0.71{\tiny$\pm$0.03} \\
+ArSSR-P & learned + geometry & 91{\tiny$\pm$0.1} & 90{\tiny$\pm$0.1} & 79{\tiny$\pm$0.8} & $-$11{\tiny$\pm$0.8} & 0.40{\tiny$\pm$0.03} &  & 91{\tiny$\pm$0.0} & 89{\tiny$\pm$0.1} & 79{\tiny$\pm$0.7} & $-$12{\tiny$\pm$0.7} & 0.49{\tiny$\pm$0.03} \\
+ArSSR-P & post hoc & 91{\tiny$\pm$0.0} & 90{\tiny$\pm$0.1} & 81{\tiny$\pm$0.2} & $-$11{\tiny$\pm$0.2} & 0.43{\tiny$\pm$0.01} &  & 91{\tiny$\pm$0.0} & 90{\tiny$\pm$0.0} & 81{\tiny$\pm$0.2} & $-$11{\tiny$\pm$0.2} & 0.43{\tiny$\pm$0.01} \\
+ArSSR-P & post hoc + geometry & 91{\tiny$\pm$0.0} & 91{\tiny$\pm$0.0} & 87{\tiny$\pm$0.2} & $-$4{\tiny$\pm$0.2} & 0.22{\tiny$\pm$0.01} &  & 91{\tiny$\pm$0.0} & 90{\tiny$\pm$0.0} & 87{\tiny$\pm$0.2} & $-$4{\tiny$\pm$0.2} & 0.22{\tiny$\pm$0.01} \\
+\addlinespace[2pt]
+Linear & post hoc & 91 & 90 & 79 & $-$12 & 0.50 &  & 91 & 90 & 84 & $-$7 & 0.35 \\
+Linear & post hoc + geometry & 91 & 91 & 92 & $+$0 & 0.15 &  & 91 & 92 & 94 & $+$3 & 0.24 \\
+\bottomrule
+\end{tabular*}
+\end{table*}

@@ -1,0 +1,10 @@
+{
+  "selected_step": 12510,
+  "selected_epoch": 10,
+  "selected_path": "checkpoints/ir2_epoch010.pt",
+  "selected_macro_psnr": 23.9234175007385,
+  "selected_macro_ssim": 0.9381456416099556,
+  "n_candidates": 11,
+  "n_eligible": 11,
+  "criterion": "max macro brain-masked PSNR on missing slices, guardrail macro_ssim >= linear_macro_ssim - 0.01"
+}

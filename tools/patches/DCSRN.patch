@@ -1,0 +1,67 @@
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..7a60b85
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,2 @@
++__pycache__/
++*.pyc
+diff --git a/tf_dcsrn/dcsrn.py b/tf_dcsrn/dcsrn.py
+index ee28db8..b12032d 100644
+--- a/tf_dcsrn/dcsrn.py
++++ b/tf_dcsrn/dcsrn.py
+@@ -10,9 +10,27 @@ import numpy as np
+ from collections import OrderedDict
+ import logging
+ 
+-import tensorflow as tf
++# IR3C_more_comparisons B1 (TF1 -> TF2 compatibility): see tf_dcsrn/layers.py.
++import tensorflow.compat.v1 as tf
++tf.disable_v2_behavior()
+ from tf_dcsrn import util
+ from tf_dcsrn.layers import (weight_variable, conv3d, pixel_wise_softmax_2)
++
++
++def _batch_norm_contrib(in_node, epsilon=1e-3):
++    """IR3C_more_comparisons B2 -- drop-in for the removed contrib batch-norm call.
++
++    `layers.batch_norm(inputs, decay)` with decay=0 and the default is_training=True
++    normalises by the CURRENT MINI-BATCH moments (the moving averages are overwritten every
++    step and never used), with center=True (trainable beta), scale=False (no gamma) and
++    epsilon=1e-3. That contrib module does not exist in TensorFlow 2, so the same
++    computation is written with core ops: same normalisation, same trainable parameters.
++    """
++    axes = list(range(len(in_node.get_shape()) - 1))
++    mean, variance = tf.nn.moments(in_node, axes=axes, keep_dims=True)
++    c = int(in_node.get_shape()[-1])
++    beta = tf.Variable(tf.zeros([c]), name='beta')
++    return tf.nn.batch_normalization(in_node, mean, variance, beta, None, epsilon)
+ from ssim import tf_SSIM
+ 
+ logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s')
+@@ -61,7 +79,7 @@ def create_conv_net(x, channels=1, layers=4, growth_rate=24, filter_size=3, summ
+         
+         # Batch Normalization layer
+         # in_node = tf.reshape(in_node, [-1, 64, 64, 64, in_features])
+-        bn = tf.contrib.layers.batch_norm(in_node, 0)
++        bn = _batch_norm_contrib(in_node)
+         # ELU layer
+         elu = tf.nn.elu(bn)
+         # 3D conv layer
+diff --git a/tf_dcsrn/layers.py b/tf_dcsrn/layers.py
+index 9c825d1..aae80c2 100644
+--- a/tf_dcsrn/layers.py
++++ b/tf_dcsrn/layers.py
+@@ -3,7 +3,11 @@ author: jakeret
+ '''
+ from __future__ import print_function, division, absolute_import, unicode_literals
+ 
+-import tensorflow as tf
++# IR3C_more_comparisons B1 (TF1 -> TF2 compatibility): TensorFlow 1.x cannot be installed
++# on this machine (aarch64 / Python 3.10); TF 2.19 is used through its v1 compatibility
++# shim. `tf.truncated_normal`, `tf.Variable` and `tf.nn.conv3d` are unchanged by this.
++import tensorflow.compat.v1 as tf
++tf.disable_v2_behavior()
+ 
+ def weight_variable(shape, stddev=0.1):
+     initial = tf.truncated_normal(shape, stddev=stddev)

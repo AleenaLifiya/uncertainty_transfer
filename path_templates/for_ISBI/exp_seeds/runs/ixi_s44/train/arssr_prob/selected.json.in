@@ -1,0 +1,10 @@
+{
+ "selected_step": 3000,
+ "selected_path": "${UT_ROOT}/for_ISBI/exp_seeds/runs/ixi_s44/train/arssr_prob/ckpt_step003000.pt",
+ "start_psnr": 21.21798418463869,
+ "sel_psnr": 23.479893142608656,
+ "sel_psnr_mc5": 21.78119552518465,
+ "sel_nll": -1.339304432272911,
+ "n_eligible": 3,
+ "train_hours": 0.873751214477751
+}

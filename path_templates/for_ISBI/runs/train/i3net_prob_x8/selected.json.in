@@ -1,0 +1,26 @@
+{
+ "name": "i3net_prob_x8",
+ "selected_step": 3500,
+ "val": {
+  "step": 3500.0,
+  "psnr": 22.635726541924743,
+  "nll": -1.350407749414444,
+  "bg_haze": 0.0025930177071131167
+ },
+ "source_val": {
+  "step": 0.0,
+  "psnr": 22.204761928482736,
+  "nll": -0.5859109424054623,
+  "bg_haze": 0.0013227574381744001
+ },
+ "n_eligible": 5,
+ "rule": "phase-2 checkpoints only; min val NLL s.t. PSNR >= src-0.2 dB and haze <= src+0.002",
+ "head_warm": 1500,
+ "lr_head": 0.001,
+ "steps": 4000,
+ "lr": 2e-05,
+ "bs": 6,
+ "source": "checkpoints/i3net_x8/i3net_x8_step003753.pt",
+ "selected_path": "${UT_ROOT}/for_ISBI/runs/train/i3net_prob_x8/ckpt_step003500.pt",
+ "train_hours": null
+}

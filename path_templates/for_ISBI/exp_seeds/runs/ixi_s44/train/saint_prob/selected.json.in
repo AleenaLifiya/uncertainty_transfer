@@ -1,0 +1,11 @@
+{
+ "selected_step": 5000,
+ "selected_path": "${UT_ROOT}/for_ISBI/exp_seeds/runs/ixi_s44/train/saint_prob/ckpt_step005000.pt",
+ "sel_psnr": 25.2239499328286,
+ "sel_nll": -1.5346028089523316,
+ "src_psnr": 25.23818766518267,
+ "src_nll": -1.2142828688025475,
+ "n_eligible": 6,
+ "rule": "phase-2; SEL brain-PSNR >= source-0.2 dB; min SEL brain NLL",
+ "train_hours": 0.0502533925904168
+}

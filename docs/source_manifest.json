@@ -1,0 +1,1206 @@
+[
+  {
+    "path": "IR3C_LPIPS/__init__.py",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "IR3C_LPIPS/brats_methods.py",
+    "source_sha256": "31c89ab5886afe69ced30f112595654fb0f9b746475eb210a61799fc28753e7b"
+  },
+  {
+    "path": "IR3C_experiments_V2/ir3c_v2/__init__.py",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "IR3C_experiments_V2/ir3c_v2/baselines_v2.py",
+    "source_sha256": "1e4c06e30e43cbf8c8f2871b23629f9a835616664efc1414ed242fc46e8ddd5e"
+  },
+  {
+    "path": "IR3C_experiments_V2/ir3c_v2/v2paths.py",
+    "source_sha256": "829757f173d6b25b53903a2ab9ddaa636b3855b18bebc9ba39872f62fe49845e"
+  },
+  {
+    "path": "IR3C_more_comparisons/comparisons_more/__init__.py",
+    "source_sha256": "e388f1727e4596adf099aabcdd757dec4e30a21d31eb05301a0dff1fda5d53a3"
+  },
+  {
+    "path": "IR3C_more_comparisons/comparisons_more/dcsrn_adapter.py",
+    "source_sha256": "7eaa28c71d79a77d0933457b5a9bac38c7dc9624cbebe28e37e19595b3681b54"
+  },
+  {
+    "path": "IR3C_more_comparisons/comparisons_more/protocol_more.py",
+    "source_sha256": "c9bff548ff0b5459d7061364b7db462a5582c380f47f3a29de97c0d1738f6b8d"
+  },
+  {
+    "path": "IR3C_more_comparisons/comparisons_more/saint_adapter.py",
+    "source_sha256": "c04e197a9a21761c6de2150a768deb073d3defc224127b1eb52339e99a95092c"
+  },
+  {
+    "path": "IR3C_more_comparisons/configs/ir3c_more_comparisons.yaml",
+    "source_sha256": "dfecf6b4c9a6c2fb4c8703fa16415f24ac297e8e4b4fa15b7265f3a5077393e9"
+  },
+  {
+    "path": "IR3C_more_comparisons/metrics/selected_DCSRN.json",
+    "source_sha256": "526a384a546d1533f9c1a1c7c01f2e47496d10669b254c74c0106f7463c17372"
+  },
+  {
+    "path": "IR3C_more_comparisons/metrics/selected_DCSRN_mixed.json",
+    "source_sha256": "c6c77d6023f62f73e4b26bb88665729f8eaa32b54fc3c8943ddf44a340535f78"
+  },
+  {
+    "path": "IR3C_more_comparisons/metrics/selected_DCSRN_x2.json",
+    "source_sha256": "c0da66464b25d49160afe59400eda9892433e183961ab6ea19ac228bf97a85eb"
+  },
+  {
+    "path": "IR3C_more_comparisons/metrics/selected_DCSRN_x4.json",
+    "source_sha256": "f2243b5fe9b242bf6f83203d275fe10d6d02754eae0883a21e9c10829cd635db"
+  },
+  {
+    "path": "IR3C_more_comparisons/metrics/selected_DCSRN_x8.json",
+    "source_sha256": "3d7dccfdb87de9ca7d426d9874ce593ccb542d4156a76351135c4b8f619e67f6"
+  },
+  {
+    "path": "IR3C_more_comparisons/metrics/selected_DCSRNmix_x2.json",
+    "source_sha256": "be213cd9cc2fbaa1280f0c57e2421389842c6c0e54408eb284ab51ff2b20f341"
+  },
+  {
+    "path": "IR3C_more_comparisons/metrics/selected_DCSRNmix_x4.json",
+    "source_sha256": "5585893082c05f2369d2ecd31801d04761329fdd8b9f60bcc36b431ebeb4b618"
+  },
+  {
+    "path": "IR3C_more_comparisons/metrics/selected_DCSRNmix_x8.json",
+    "source_sha256": "72b05bf62da0b96ac57dbc1712ac88405e8369b3d791a62919fef3561193024e"
+  },
+  {
+    "path": "IR3C_more_comparisons/metrics/selected_SAINT_msr.json",
+    "source_sha256": "d818b2490ebc661bc6aa12bdba110edb886a103bb5c0b9bb14e71a1abeb36d82"
+  },
+  {
+    "path": "IR3C_more_comparisons/metrics/selected_SAINT_rfn.json",
+    "source_sha256": "0758cc4d12d577c5f3a8c8281b53800fa49674a4f5ec970f3cde998dd5fcfca4"
+  },
+  {
+    "path": "X-Diffusion/LICENSE",
+    "source_sha256": "db7b51734c0b098407c121530d810026743145f11333bcae9b58b442197f9695"
+  },
+  {
+    "path": "X-Diffusion/scripts/ldm/data/__init__.py",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "X-Diffusion/scripts/ldm/data/brats_preprocessing_fidelity.py",
+    "source_sha256": "51ff967978eba4dd7e234cb6388e4ebbb8a3b53d096ec423f293f0e7d332a646"
+  },
+  {
+    "path": "X-Diffusion/scripts/ldm/data/bratsloader_controlnet_fidelity.py",
+    "source_sha256": "6eee402f2e7355d2c2340dbd7d36cf9e9783d1f32316044f01571081bd02ab5c"
+  },
+  {
+    "path": "X-Diffusion/scripts/ldm/models/autoencoder.py",
+    "source_sha256": "612f4fdc24b11bb0c69c546059aa1f3c187e620ef2dfdbb0e6f6c6811b5c5268"
+  },
+  {
+    "path": "X-Diffusion/scripts/ldm/models/diffusion/__init__.py",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "X-Diffusion/scripts/ldm/models/diffusion/ddim.py",
+    "source_sha256": "8d8ef3e2f4fd77c8d4be4ce247d30423927a76464d2f66246e3c48e67df57730"
+  },
+  {
+    "path": "X-Diffusion/scripts/ldm/models/diffusion/ddpm.py",
+    "source_sha256": "6498935620120719a049d08e496fb0799983fc2e7ced1a0a217f758ef5b6e703"
+  },
+  {
+    "path": "X-Diffusion/scripts/ldm/models/diffusion/fidelity_legacy.py",
+    "source_sha256": "c7e1002890b0cfe34d82692cafa525056ab95ab939264f2214c0889cf117950e"
+  },
+  {
+    "path": "X-Diffusion/scripts/ldm/models/diffusion/fidelity_metrics.py",
+    "source_sha256": "74d12408ad85c7ce1dae5f22432b5b1d78057d39133bbaad508e09cfa31ef1b2"
+  },
+  {
+    "path": "X-Diffusion/scripts/ldm/models/diffusion/fidelity_residual_l3b.py",
+    "source_sha256": "fb71a6d2ca6db239b5b12cf31f28db9b3ae3c6e811280fcd33f06da13da88851"
+  },
+  {
+    "path": "X-Diffusion/scripts/ldm/models/diffusion/fidelity_residual_l3c.py",
+    "source_sha256": "7c4c49d19139d577b7cdce902d0976ddb918a6fbeea5525f2e57b154b9227517"
+  },
+  {
+    "path": "X-Diffusion/scripts/ldm/models/diffusion/fidelity_runtime.py",
+    "source_sha256": "c6f9002f6a23df4e73806cb8eb2bfba678ffab6dbe64177c4759cda2561d7ff0"
+  },
+  {
+    "path": "X-Diffusion/scripts/ldm/models/diffusion/fidelity_sampling.py",
+    "source_sha256": "169d73df28c453047b43b01f7866a8acef79792601f6460f395a4fde754920b9"
+  },
+  {
+    "path": "X-Diffusion/scripts/ldm/models/diffusion/sampling_util.py",
+    "source_sha256": "9f94594ca4527dc94146fb36115d5fe69f16a71b7fe31d8d0683fbd38aa9d319"
+  },
+  {
+    "path": "X-Diffusion/scripts/ldm/modules/attention.py",
+    "source_sha256": "a340600ff569f5f2fffa96e14d7ac33620925455a24902c0d55f68b824976222"
+  },
+  {
+    "path": "X-Diffusion/scripts/ldm/modules/diffusionmodules/__init__.py",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "X-Diffusion/scripts/ldm/modules/diffusionmodules/model.py",
+    "source_sha256": "9484c59bfe7e2ab161e6f0465d0d567486c812b221ca87ce7a98d42f9fbd1b10"
+  },
+  {
+    "path": "X-Diffusion/scripts/ldm/modules/diffusionmodules/util.py",
+    "source_sha256": "0a594077d1465b0e55e46771b20a5020766db11df92723327c0bca5060b50f48"
+  },
+  {
+    "path": "X-Diffusion/scripts/ldm/modules/distributions/__init__.py",
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "X-Diffusion/scripts/ldm/modules/distributions/distributions.py",
+    "source_sha256": "18708d985e0bbe9b0681146297977dce4c0eb4e6dbeea295d88adbfdd950b0b1"
+  },
+  {
+    "path": "X-Diffusion/scripts/ldm/modules/ema.py",
+    "source_sha256": "c74d4795df3debdf9c13fc5b7525c7e202c5c5dc654f60db38ec21e0e06c4d67"
+  },
+  {
+    "path": "X-Diffusion/scripts/ldm/util.py",
+    "source_sha256": "ef6d86a118ffad2fb017b24d48b9434a12dfda839de687b0d79e471cdd55b73b"
+  },
+  {
+    "path": "comparisons/__init__.py",
+    "source_sha256": "6a1b7c0600729a658db549ae1c24edc086d731c99f06388ac0a498aed3a88e86"
+  },
+  {
+    "path": "comparisons/arssr_adapter.py",
+    "source_sha256": "787c085cd7d1be9b51503c4a71bce4e01c7fe00cf7d5b200cf7b37bdcd3732cd"
+  },
+  {
+    "path": "comparisons/i3net_adapter.py",
+    "source_sha256": "939b9c8e934508886eacdc2c00105379b55a873f5838c4591b2fa98527fc0924"
+  },
+  {
+    "path": "comparisons/protocol.py",
+    "source_sha256": "0849b1a8fdd5e4ab68d44a0e267ce4ab4ec68e9d1ccfaa6a94ac8ef368eeb133"
+  },
+  {
+    "path": "comparisons/training.py",
+    "source_sha256": "3519f1168ff2d7193fd93bb17ffc66686f5c131413d706e1b100c626c4376110"
+  },
+  {
+    "path": "configs/ir3c_comparisons.yaml",
+    "source_sha256": "c4a3011b1857cbea9da3990473420d44b68d85f128ebea193119d0eae110fc5f"
+  },
+  {
+    "path": "for_ISBI/PROTOCOL.md",
+    "source_sha256": "c665eafde18ef71a8a998bf68e7a41f3ad7ab76c9bb3374dbf389e9f84335531"
+  },
+  {
+    "path": "for_ISBI/configs/protocol_frozen.json",
+    "source_sha256": "96950771874a30a9b024dead085c9953f05b5d258fbf364426ebb17fd15748d5"
+  },
+  {
+    "path": "for_ISBI/configs/protocol_prefreeze.json",
+    "source_sha256": "a0ceb9fa713b1324f538768d4126dd0acf5334c7fbfcd4ede33f31ef37e5c541"
+  },
+  {
+    "path": "for_ISBI/configs/roles.json",
+    "source_sha256": "4472508729c59234c729529a1b83c9e88ed043ed74517656e302eec22f2d86c1"
+  },
+  {
+    "path": "for_ISBI/exp_ixi/runs/train/arssr_ext/selected.json",
+    "source_sha256": "92b099d0ff943330fac853b2a233c4619a9db085eee574d94a1a28563d821211"
+  },
+  {
+    "path": "for_ISBI/exp_ixi/runs/train/arssr_prob/selected.json",
+    "source_sha256": "fe3d81f2c2d5d054647e55c79ab7cae53996869b07de3b76f64afb6ce6f54970"
+  },
+  {
+    "path": "for_ISBI/exp_ixi/runs/train/saint_prob/selected.json",
+    "source_sha256": "e0f296ae9b90d5976a95b31dfb9b2e3dda4cee248c58206d2b167d9fb68094ee"
+  },
+  {
+    "path": "for_ISBI/exp_ixi/scripts/arssr_ixi.py",
+    "source_sha256": "45042a410da440ceb162756f21f0d2c2b50e5cc75eda01fc28ac6614c44d0091"
+  },
+  {
+    "path": "for_ISBI/exp_ixi/scripts/eval_ixi.py",
+    "source_sha256": "2b0f4c868375bc63c62d8b967dc902b139fcbcbd94297ddb784923154e15cbc0"
+  },
+  {
+    "path": "for_ISBI/exp_ixi/scripts/ixi_isbi.py",
+    "source_sha256": "7479fd61414515b2dba01246c560311e9f56ca9793827803de36c2ec73e61ab4"
+  },
+  {
+    "path": "for_ISBI/exp_ixi/scripts/train_saintp_ixi.py",
+    "source_sha256": "0911e0a849e529bc6960ce3daa6b624da2c165ea1dc539b7d5332526b5663199"
+  },
+  {
+    "path": "for_ISBI/exp_pg/runs/brats_arssr_s42/train/selected.json",
+    "source_sha256": "2e8e663c2c82c27c0658ba3bc5537f618a4e5a10597af2e20fe9b7e39acfd901"
+  },
+  {
+    "path": "for_ISBI/exp_pg/runs/brats_arssr_s43/train/selected.json",
+    "source_sha256": "5c24841d6a922544f3c10c5d60e937e60df37907e5070f3668f7fed990714970"
+  },
+  {
+    "path": "for_ISBI/exp_pg/runs/brats_arssr_s44/train/selected.json",
+    "source_sha256": "5d1bc05bfbba673e681b8d4f507273c6de8c5995ea8ff44d1f2b7f589fff5cca"
+  },
+  {
+    "path": "for_ISBI/exp_pg/runs/brats_saint_s42/train/selected.json",
+    "source_sha256": "dc4282c290febdb3b1dd5bdcb15caf2d9c50913cc116882aa2abfebd283b57dc"
+  },
+  {
+    "path": "for_ISBI/exp_pg/runs/brats_saint_s43/train/selected.json",
+    "source_sha256": "1c92c151ac8db677dbfb526c883d7bf277ed59d47f02e2b763771dfd96836800"
+  },
+  {
+    "path": "for_ISBI/exp_pg/runs/brats_saint_s44/train/selected.json",
+    "source_sha256": "bf5d753221756ea13346a73e762c4e6ccff90942b8d463492f17ef860d00c745"
+  },
+  {
+    "path": "for_ISBI/exp_pg/runs/ixi_arssr_s42/train/selected.json",
+    "source_sha256": "6c422a5021de95a9bb73ec80eb4c6d0dd161612aef164a5f3200dab363274f93"
+  },
+  {
+    "path": "for_ISBI/exp_pg/runs/ixi_arssr_s43/train/selected.json",
+    "source_sha256": "c6d8fc171bd0434161d4a79033c94d4c2c010aa23775a6db6e5c6ba82216df5f"
+  },
+  {
+    "path": "for_ISBI/exp_pg/runs/ixi_arssr_s44/train/selected.json",
+    "source_sha256": "45779d75f161452024f4aace4a2a0b66e22f122ea6f022f5e19bf6d0b6d4ef98"
+  },
+  {
+    "path": "for_ISBI/exp_pg/runs/ixi_saint_s42/train/selected.json",
+    "source_sha256": "50ce99bb0a9c56ee55f9c956a6c4cecbe60260e666e85da370d62c5caa51ba59"
+  },
+  {
+    "path": "for_ISBI/exp_pg/runs/ixi_saint_s43/train/selected.json",
+    "source_sha256": "ab00cf9b952811af9058a0dd538e1172c53e6f24732defa1a231031406c00c36"
+  },
+  {
+    "path": "for_ISBI/exp_pg/runs/ixi_saint_s44/train/selected.json",
+    "source_sha256": "f1bea16e0654caf2540fa4ad598a895b8a89d4ef4cdd907f4017e9c7143aac86"
+  },
+  {
+    "path": "for_ISBI/exp_pg/scripts/eval_pg.py",
+    "source_sha256": "4c1701f00635c612548973c28229a1d5c3aa3ad8e842b84c73360c81d03ec1a0"
+  },
+  {
+    "path": "for_ISBI/exp_pg/scripts/metrics_pg.py",
+    "source_sha256": "1de1fff4b0321d8ab7d4977cf1313be43c947e822e43dd0e2fbbee6a7b7cf70b"
+  },
+  {
+    "path": "for_ISBI/exp_pg/scripts/pg.py",
+    "source_sha256": "953784bcee4cd78cef9edd874915f2033ee6cb8b373f28ff31f33f39dcc693bc"
+  },
+  {
+    "path": "for_ISBI/exp_pg/scripts/significance_v2.py",
+    "source_sha256": "fbeedd6544f227e6724e15bba1d89dc6d7e0514c33a76548bb6f5b2f50f2a78d"
+  },
+  {
+    "path": "for_ISBI/exp_pg/scripts/train_pg.py",
+    "source_sha256": "5dcab1c4b71f69abf1c2ac5938e150641197d6016b4be9d1fcac98948621604c"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s42_ArSSR/case.csv",
+    "source_sha256": "cb57b02791d94dad39fa5d7a6f11fef848a5c143d6f33346352f6679efc67d08"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s42_ArSSR/gapbin_case.csv",
+    "source_sha256": "cc8ee115cee80db9d840887ddb144ffe6acbb4b61976ca5bfc3543861994c44d"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s42_ArSSR/summary.csv",
+    "source_sha256": "5dad64f3877e994212faff4f6c5cf53334e0e945f53c1f32c8b0712cf814ff03"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s42_ArSSR_PG/case.csv",
+    "source_sha256": "1d3e46b1aced7df77c987376e08df00cb9f9a3188c09401a747b14e9c38c7875"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s42_ArSSR_PG/gapbin_case.csv",
+    "source_sha256": "07a691df51f97e64f7a2051ca1d36d7d52274bc848696331af701d4ff47402a7"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s42_ArSSR_PG/summary.csv",
+    "source_sha256": "119b75ba649f6d985e080db1a7a0d2224ceb1864a625943d2baabf2e04c5579a"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s42_SAINT_P/case.csv",
+    "source_sha256": "9f33fe31f1bd4dd4e849c58d292b5b959218e640c200c4dd982080a8d63ff7cc"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s42_SAINT_P/gapbin_case.csv",
+    "source_sha256": "761da2cb1b53ff8954d67bbe99060cdcf6fec070fe341eedd545b26e13c3dd5c"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s42_SAINT_P/summary.csv",
+    "source_sha256": "91d5801d00746e78afcd5dcd91ae5d624c9b15e5f2f9d569506743212abb4a95"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s42_SAINT_PG/case.csv",
+    "source_sha256": "09d6e0c871afb6e526c034c193a03148560ae299b1744ba89383720e90c8e079"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s42_SAINT_PG/gapbin_case.csv",
+    "source_sha256": "b01eb58e26ce5ab3512110339e11a9f81de4d4aa4be8bd1461df4dc3d5fca6ac"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s42_SAINT_PG/summary.csv",
+    "source_sha256": "a40408ae0ca475c3d1dfb2abdd80a09795f614815c5af2b04cdde63a73e91e81"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s42_linear/case.csv",
+    "source_sha256": "e9814f92ffb6717e2041002aa3787c0db877ec925a00582013c4aa02034c95de"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s42_linear/gapbin_case.csv",
+    "source_sha256": "e1dc72ecd238d881af2bf21ec1b961eebc8230dea0d25de0a38ab3df4abd18a6"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s42_linear/summary.csv",
+    "source_sha256": "bf441949be66e50072dea4ad7b6ce6cc4b49a3a01a82a54be7c5ba30bf300d1d"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s43_ArSSR/case.csv",
+    "source_sha256": "ec8b11169e9a8ba00c946377fa41dfd631b05225b8130a21fdbb3a5bc1eabd31"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s43_ArSSR/gapbin_case.csv",
+    "source_sha256": "7fd3dba31c9bda5b1dbd54e6cfda15fc003a583a09ab4e78eb1040ccca57c76c"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s43_ArSSR/summary.csv",
+    "source_sha256": "4fa02ea6d3bed28e6ba8264069a6cb379edca00d37870d35476ce99aa8148815"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s43_ArSSR_PG/case.csv",
+    "source_sha256": "8ac6cc345be2446ec9e80e89b60ed2e19bff92314ff7e5baf9fe4b3bc958992f"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s43_ArSSR_PG/gapbin_case.csv",
+    "source_sha256": "83552a7193273efb377815548b22c629bc4d1582c6f9419c7599726bd3cfa672"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s43_ArSSR_PG/summary.csv",
+    "source_sha256": "6c4837063e24cd92aa0f9e2180f90729df7b3157a51e72f120c7e8c4515905a8"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s43_SAINT_P/case.csv",
+    "source_sha256": "f706c35daa3b14c84b7de0c84f7e60bfbb5f784542fbb10a58227a51ec7cfaab"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s43_SAINT_P/gapbin_case.csv",
+    "source_sha256": "b19738ceff0ff791d97bd0dedc80395a2418f35528accffe541d597f805dce02"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s43_SAINT_P/summary.csv",
+    "source_sha256": "8529cb815d50e5a0609d754371d1ec048f632ea856feb12631b3887c553ebe88"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s43_SAINT_PG/case.csv",
+    "source_sha256": "d4250a8070cf770323410239fd6d835282ff449aa6a80ad0bd5db54a60e4b75e"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s43_SAINT_PG/gapbin_case.csv",
+    "source_sha256": "9927fa378194c43dd0ff35cadebe69870b2dbcb9dfad9ed51c3d529be72d390d"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s43_SAINT_PG/summary.csv",
+    "source_sha256": "7aefd79550569b0e32365226a796bdba73dad0554a5b6664af4a1a40309ec688"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s43_linear/case.csv",
+    "source_sha256": "e9814f92ffb6717e2041002aa3787c0db877ec925a00582013c4aa02034c95de"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s43_linear/gapbin_case.csv",
+    "source_sha256": "e1dc72ecd238d881af2bf21ec1b961eebc8230dea0d25de0a38ab3df4abd18a6"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s43_linear/summary.csv",
+    "source_sha256": "bf441949be66e50072dea4ad7b6ce6cc4b49a3a01a82a54be7c5ba30bf300d1d"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s44_ArSSR/case.csv",
+    "source_sha256": "fe02a77ec2581e27e4daa5236f51dd334601adeed025f9616ba28527aebc1ae5"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s44_ArSSR/gapbin_case.csv",
+    "source_sha256": "f22fda110e664c994145b34def3e3dbe3029aa00aec495d865ff21ed027ec593"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s44_ArSSR/summary.csv",
+    "source_sha256": "569ff2c2a6c99cf8512a8131f296ed7c837e61ae9d352193135c7ec538202538"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s44_ArSSR_PG/case.csv",
+    "source_sha256": "52ea805e0074f3ca56a67924098602c84b1cc22360177615af2cbfefc3323a16"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s44_ArSSR_PG/gapbin_case.csv",
+    "source_sha256": "fb970aea3ac0b292d5c186c560576dedd6e163973d89e13cf38894527ad2883b"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s44_ArSSR_PG/summary.csv",
+    "source_sha256": "1d8e847cdfe7592359140a644abb00710b5a092b56ea121cec877958c477dd94"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s44_SAINT_P/case.csv",
+    "source_sha256": "efb20e4c5d6071686206a1df6e2fa1af28fb22d32636ba4d7ac2d094e9f99146"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s44_SAINT_P/gapbin_case.csv",
+    "source_sha256": "c20f5e8528c9c7c8b0ec48620ffd3d5c92eda1c28e915d03ac50ae6fd9545719"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s44_SAINT_P/summary.csv",
+    "source_sha256": "1e8d8580ed8ea64bc2f624d8df0f40666292550e48516f8b90aa9198ab37e3d0"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s44_SAINT_PG/case.csv",
+    "source_sha256": "ed9dd6b7d79789517c2f75ef5ce9dfa4c88fed83149476cbdbb522ff679ea870"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s44_SAINT_PG/gapbin_case.csv",
+    "source_sha256": "766e90be9322156d5417ae6eb5cdc239528d5e22a5e5e77ff1082b8ea0c6fe8b"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s44_SAINT_PG/summary.csv",
+    "source_sha256": "ac925a929a7011f8d8a051748347a0555ca1758b920fd44d884dbb5ad6250fa5"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s44_linear/case.csv",
+    "source_sha256": "e9814f92ffb6717e2041002aa3787c0db877ec925a00582013c4aa02034c95de"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s44_linear/gapbin_case.csv",
+    "source_sha256": "e1dc72ecd238d881af2bf21ec1b961eebc8230dea0d25de0a38ab3df4abd18a6"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/brats_s44_linear/summary.csv",
+    "source_sha256": "bf441949be66e50072dea4ad7b6ce6cc4b49a3a01a82a54be7c5ba30bf300d1d"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s42_ArSSR/case.csv",
+    "source_sha256": "4a838dbaaa60dd4d77da1e7f4a44fbc43d42dafb0e46c51232757b8169217a0e"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s42_ArSSR/gapbin_case.csv",
+    "source_sha256": "61027b9e9610954c4eeed5812055e1722901528bd1a9249f278cf6e0a3b62295"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s42_ArSSR/summary.csv",
+    "source_sha256": "876f362cf0dd3f7ae422cb7e4a9727c99e0dd3f3abb3873af402b91034c70533"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s42_ArSSR_PG/case.csv",
+    "source_sha256": "d0c72ea2e852cb0936fb9ae33696d42cbbe513ca54c55954234c1b92d84e1997"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s42_ArSSR_PG/gapbin_case.csv",
+    "source_sha256": "c8705abc2225e59b9dcd83f9a96bb2abb66f204b0556b20a740b2bf3c977e97e"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s42_ArSSR_PG/summary.csv",
+    "source_sha256": "0c0c551b09ae8b9efc45fe222a74eddfc9a79bcce97dce188861a441c0503900"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s42_SAINT_P/case.csv",
+    "source_sha256": "4ab9abe00563cab1555bf31d992254ae4d4c8e58118c2f67a395f1eda245953f"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s42_SAINT_P/gapbin_case.csv",
+    "source_sha256": "28607326cdcc722d9aa76e33e08fa46980d670f41a5be58c9d22a2670b197fbc"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s42_SAINT_P/summary.csv",
+    "source_sha256": "9ab64b8828981931dffe8199a3051d2848e4a7d7d42383b5fc3abe4971e648e3"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s42_SAINT_PG/case.csv",
+    "source_sha256": "2cff5fa58cd2946bc42241f7c2eb35f8b1d6576d75e6ea560a01aa5bc5f28a56"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s42_SAINT_PG/gapbin_case.csv",
+    "source_sha256": "976de0ec47d27a9e086a2b44050d5513eebf39d1c2ec4b678b7d8fa4d0b22bfe"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s42_SAINT_PG/summary.csv",
+    "source_sha256": "526be3d2cfe0230e61aa4c9848c6b0dc00477ff4364d44f852724f7ee4fb1e1c"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s42_linear/case.csv",
+    "source_sha256": "4e5e92580a28ff03e5f675041652508111c1473211d5163dcea40570eb4a05db"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s42_linear/gapbin_case.csv",
+    "source_sha256": "d04e766e20b8ad910ed93e781dafba57a49928e9f5f6c422c463dec86100699f"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s42_linear/summary.csv",
+    "source_sha256": "79a1c55b259abbfaff4b01b45e0a658d08098eb42c652a9e041440e7199a83d5"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s43_ArSSR/case.csv",
+    "source_sha256": "8831b80aa19aacab89eeb40dec3952749eb9e9b81d889f9b0ca7494f24334bb8"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s43_ArSSR/gapbin_case.csv",
+    "source_sha256": "d53748f42949051ae8988aaf27c89e025e2175a6fb6532ed750171d9d13f665c"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s43_ArSSR/summary.csv",
+    "source_sha256": "829041e314ed3a9db1de4a9a49e3d40b5b87d5e019b6db0d666ed16cf0b81034"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s43_ArSSR_PG/case.csv",
+    "source_sha256": "941fbfaaf2a0abec005ad52ea2f940d37fe317c245d9767ddf22100f90259333"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s43_ArSSR_PG/gapbin_case.csv",
+    "source_sha256": "1c3ecd4439a0932d9f3faafdfdef2923e59683780b4bdafcc02c63766981b3ad"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s43_ArSSR_PG/summary.csv",
+    "source_sha256": "e6a9f0f9f0bb7539e1c7015d17ff71b290313ded7ce2572205c455f9a5444c11"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s43_SAINT_P/case.csv",
+    "source_sha256": "dcbc8976f7d1fed2270e202172e42f128d240a116a26eb06fab71ad53036f043"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s43_SAINT_P/gapbin_case.csv",
+    "source_sha256": "c0d55b414ca3fa1edc48a15ae5488ddcd620fcb27c6df50d18f8b0df12631ce2"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s43_SAINT_P/summary.csv",
+    "source_sha256": "b61a2224b11cdffaf4a1b820c9f6ca4cc240e3ea18299f4d11ed4c196e395b21"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s43_SAINT_PG/case.csv",
+    "source_sha256": "3f52cb8d34f6cacef43a2a0bb507eac953f7a86580c0e743117942b2129c5260"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s43_SAINT_PG/gapbin_case.csv",
+    "source_sha256": "a2ad1c68264cbbf1a8f47a2cdf9ed4188fd0770bed34c0ef07734f84030cd9d2"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s43_SAINT_PG/summary.csv",
+    "source_sha256": "cabf5a12833bf4a0b799999f231236445f01816f242e54b6d54ab8543bd3b313"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s43_linear/case.csv",
+    "source_sha256": "4e5e92580a28ff03e5f675041652508111c1473211d5163dcea40570eb4a05db"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s43_linear/gapbin_case.csv",
+    "source_sha256": "d04e766e20b8ad910ed93e781dafba57a49928e9f5f6c422c463dec86100699f"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s43_linear/summary.csv",
+    "source_sha256": "79a1c55b259abbfaff4b01b45e0a658d08098eb42c652a9e041440e7199a83d5"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s44_ArSSR/case.csv",
+    "source_sha256": "8e50590e72512f7f5ec7c4367d1924a5ecccc2653f19f718f83eccd0415fab23"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s44_ArSSR/gapbin_case.csv",
+    "source_sha256": "4a81432af4d884fe840ddbd73c6b98c556548f4059bb04bb71e9f7e1e1172556"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s44_ArSSR/summary.csv",
+    "source_sha256": "9734af473ba371952561227a6a12cb7f2c5940e449f148b0410918f4a65811c2"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s44_ArSSR_PG/case.csv",
+    "source_sha256": "81e5506bd8bbe814675aaf5087d705a97e56a30eaa2a42dbb01411c9e5dce744"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s44_ArSSR_PG/gapbin_case.csv",
+    "source_sha256": "f07355693385a2b68dd30f6a7f0065ab11d9dbcef4946a37c5d058d2a42244f6"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s44_ArSSR_PG/summary.csv",
+    "source_sha256": "e111d87a157a446a3db55e082d584920a39f6d36d51e5c8aec73eedc4d92a6eb"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s44_SAINT_P/case.csv",
+    "source_sha256": "3555a3a37d14f79c5ce1b0750777f913c27bf909bce47104fb50c61ebf1149f1"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s44_SAINT_P/gapbin_case.csv",
+    "source_sha256": "6fc92abcfa8f03eb394955c76ac8d0de3351ab61f4f80ac3e52d916cf49f3c5b"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s44_SAINT_P/summary.csv",
+    "source_sha256": "92dcaf6c1ceca82bb2a2aaa10ebeb53046207290f165d83d785304b61e3048c1"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s44_SAINT_PG/case.csv",
+    "source_sha256": "ce909ca983f934747aa0547f280fc6bed7168d8e74d274bda3d8319c9b627c13"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s44_SAINT_PG/gapbin_case.csv",
+    "source_sha256": "4c11c1e3cc3010bce992f8f07f9a0701d04bb6491db1e6643b5bb9f0294d57fa"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s44_SAINT_PG/summary.csv",
+    "source_sha256": "361681261e7274ae7d6230ea3f6b686527c382766257342acb931e7a878e35d5"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s44_linear/case.csv",
+    "source_sha256": "4e5e92580a28ff03e5f675041652508111c1473211d5163dcea40570eb4a05db"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s44_linear/gapbin_case.csv",
+    "source_sha256": "d04e766e20b8ad910ed93e781dafba57a49928e9f5f6c422c463dec86100699f"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/ixi_s44_linear/summary.csv",
+    "source_sha256": "79a1c55b259abbfaff4b01b45e0a658d08098eb42c652a9e041440e7199a83d5"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/seeds_dcov.csv",
+    "source_sha256": "14956a96595e6583ce563c442070d544b65c205be0b7d8e4003bf011356e3c6d"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/seeds_per_seed.csv",
+    "source_sha256": "7df4711c0fc44927145a1c22b9760931ee7a08a3a6f33a190089bc0e722da7bd"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/results/seeds_summary.csv",
+    "source_sha256": "cc32cf14a59cd8d06c6463534f1a59cad5ab35f1468cc22c0e5e579a92309ff6"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/runs/brats_s43/train/arssr_ext/selected.json",
+    "source_sha256": "761641137fcfcc30f8894df058f400eed7583c487cd149816c963de49c2e9154"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/runs/brats_s43/train/arssr_prob/selected.json",
+    "source_sha256": "d09157b1d1eec9fffc8bd6e457a7b5c1dec6989202679a6ee407e1fac3a8f3d9"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/runs/brats_s43/train/saint_prob/selected.json",
+    "source_sha256": "e1d3dcb529965111436cb705c73d5488a66146047885db259d22c5f023e2a5bb"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/runs/brats_s44/train/arssr_ext/selected.json",
+    "source_sha256": "761641137fcfcc30f8894df058f400eed7583c487cd149816c963de49c2e9154"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/runs/brats_s44/train/arssr_prob/selected.json",
+    "source_sha256": "b929ff3b7a7abe81b30324fb0f4667cd1addc1de3620cf5e2c64e5f5697d05c0"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/runs/brats_s44/train/saint_prob/selected.json",
+    "source_sha256": "3e12c87733e0888c42bef9258deacf46ec5cb73bf593d73bd6fb671588e57f42"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/runs/ixi_s43/train/arssr_prob/selected.json",
+    "source_sha256": "3b9bffcddc4e5e9a85dc1a5de305eb18777b777cde4f8dd4a10031e30c6e99ac"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/runs/ixi_s43/train/saint_prob/selected.json",
+    "source_sha256": "f627e4b74a378314114f71c268f9d251ee0149ad784cd81cd0a57e52a8d9d4a9"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/runs/ixi_s44/train/arssr_prob/selected.json",
+    "source_sha256": "ab7613b18a3213e3209760072305774464d9e2e28984c041d86557b84c4281ad"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/runs/ixi_s44/train/saint_prob/selected.json",
+    "source_sha256": "5d8d999f370e336c39d4c55997028b13d1b1cf8d45f303bb35a26062abc762b2"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/scripts/aggregate_seeds.py",
+    "source_sha256": "1116b8c36b9645b287d7a3c30e2266bcaeeb35f6ed50c56248348a691b137a39"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/scripts/arssr_ixi_seed.py",
+    "source_sha256": "a9432442d805db0438cc3b6f00c120a6cf54e39933ec3103e02053a6cc249ecd"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/scripts/eval_saintp_brats_seed.py",
+    "source_sha256": "134cba48832937fd3edc3857d5fb8e286a5fe98ef291d957689aa55f8fdbffb3"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/scripts/eval_saintp_ixi_seed.py",
+    "source_sha256": "b7b03caa4560f9d30c036c2a5e21a5f635510e20df61d9d2034b1e412cf427e6"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/scripts/metrics_seed.py",
+    "source_sha256": "e12fa2552357e51272752e12409e26e3300dc4d62443fb611cda887faf56e0b1"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/scripts/train_arssrp_brats_seed.py",
+    "source_sha256": "c33846bae1c918ef28815010c1edd6a572952a4a2e2295b51d597c9574869bf5"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/scripts/train_saintp_brats_seed.py",
+    "source_sha256": "1d442e646729945e7343502f37de29e9c50337866c633c51ee025e093b644b0b"
+  },
+  {
+    "path": "for_ISBI/exp_seeds/scripts/train_saintp_ixi_seed.py",
+    "source_sha256": "e0b0495b3d6be301c4b5c86ac9c769a4471a6c276bd138511f40cc7eb980576e"
+  },
+  {
+    "path": "for_ISBI/exp_uniform_arssr/runs/train/arssr_ext/selected.json",
+    "source_sha256": "761641137fcfcc30f8894df058f400eed7583c487cd149816c963de49c2e9154"
+  },
+  {
+    "path": "for_ISBI/exp_uniform_arssr/runs/train/arssr_prob/selected.json",
+    "source_sha256": "7d722f998c5c760ebff3e15cfbfa816cbecf1f9969e80eb6edadf081d0ea98e6"
+  },
+  {
+    "path": "for_ISBI/exp_uniform_arssr/scripts/analysis_cpu.py",
+    "source_sha256": "56dece4268ec82853b66caef699b00b21ffa3107126a1ae5b26acc0026449bf7"
+  },
+  {
+    "path": "for_ISBI/exp_uniform_arssr/scripts/qual_v3.py",
+    "source_sha256": "0b1a81946d2370cd2c77e44f694a90877b2ae2a956a9f2aa172fc09b349dca64"
+  },
+  {
+    "path": "for_ISBI/exp_uniform_arssr/scripts/qual_v4.py",
+    "source_sha256": "40d88e15796df31e3f43da2bf3465e6420c9f23a74333edec990fa1f9c4096a6"
+  },
+  {
+    "path": "for_ISBI/exp_uniform_arssr/scripts/ranking_v3.py",
+    "source_sha256": "abf44212d7e07ce7f29dab54eb5f527c1b55216ca9163538f260af1413f6df2e"
+  },
+  {
+    "path": "for_ISBI/exp_uniform_arssr/scripts/train_uarssr_det.py",
+    "source_sha256": "d0585d230a5c7783be8f26029c85215aae4fda30ced315c205524d88e12a4ee4"
+  },
+  {
+    "path": "for_ISBI/exp_uniform_arssr/scripts/train_uarssr_prob.py",
+    "source_sha256": "f70a4b937fb23f266eae08a636c0643e24c7375516ec32b65090cc0f015b07ae"
+  },
+  {
+    "path": "for_ISBI/manuscript_4page/scripts/compute_interval_scores.py",
+    "source_sha256": "e5afd341bdd94943d90e4ad89825cc3a36dd8963be40551c860b2cf05aa4ef9c"
+  },
+  {
+    "path": "for_ISBI/manuscript_4page/scripts/fig_gapcov.py",
+    "source_sha256": "063e1719fc9777719a65b9ffdfd9140679eb7855a56289b882af000f8e3149a4"
+  },
+  {
+    "path": "for_ISBI/manuscript_4page/scripts/fig_method_thumbs_v5.py",
+    "source_sha256": "0de556eda663664177bab2c3b080621c2429ba5db5f734fda9a42c174ed8f5e7"
+  },
+  {
+    "path": "for_ISBI/manuscript_4page/scripts/fig_qual_v4.py",
+    "source_sha256": "e9b2f0bbe9ca9e78b8fd6ddc526658647363cd0d80e63ef1f557ce5d48d2d361"
+  },
+  {
+    "path": "for_ISBI/manuscript_4page/scripts/fig_qualitative.py",
+    "source_sha256": "2100bdaa4897eb61fb8aebc0899a288897d3cbab1696a3a86cae66120e62ddb5"
+  },
+  {
+    "path": "for_ISBI/manuscript_4page/scripts/fig_qualitative_v3.py",
+    "source_sha256": "a010435df840308533c6181fd12c66f5aca438383bb1e87de61d581dc7a1513c"
+  },
+  {
+    "path": "for_ISBI/manuscript_4page/scripts/fig_reliability.py",
+    "source_sha256": "d79d5b7531376699f2f92a6b3f24a891f0270e779a7e514c4a06a57cc0177fdd"
+  },
+  {
+    "path": "for_ISBI/manuscript_4page/scripts/make_table_v3.py",
+    "source_sha256": "a39a1152bfd668e0cd30baca2d8603d9bec5b6d2a14e5602af6da2b670cbcfe8"
+  },
+  {
+    "path": "for_ISBI/manuscript_4page/scripts/make_table_v4.py",
+    "source_sha256": "17f9847dcd10ebf3d744f4adfb5eb5c3025934e2d986cfea97365f23d3d601ca"
+  },
+  {
+    "path": "for_ISBI/manuscript_4page/scripts/make_tables.py",
+    "source_sha256": "1baf190d1a34b241eb6960938c62b2430648f3248f315ad268521ed7036c3cb6"
+  },
+  {
+    "path": "for_ISBI/manuscript_4page/scripts/msstyle.py",
+    "source_sha256": "013592033a1e8d1f88976434fa9cbed1b07cdf617983b6093c904b4358730ded"
+  },
+  {
+    "path": "for_ISBI/results/significance_v2/REPORT.md",
+    "source_sha256": "22fa49f6eb8c0c02246e83ec32ede483e6d3ae6d9ba7dd461c5177bb414ee31f"
+  },
+  {
+    "path": "for_ISBI/results/significance_v2/anova.csv",
+    "source_sha256": "6225175ece5051adc6f06986072c9bdbbbc90c0b7fccf261e794b3f534eb76a7"
+  },
+  {
+    "path": "for_ISBI/results/significance_v2/contrasts.csv",
+    "source_sha256": "245aa8a2e0a600ffcc8dbf3f4271aa1d2e3998c02628efec781488eaa7477b2c"
+  },
+  {
+    "path": "for_ISBI/results/significance_v2/patient_outcomes.csv",
+    "source_sha256": "3a3659c211ac63ca992b1e346a8954c34e09d10d6ee5bcd32e54987b5c5396aa"
+  },
+  {
+    "path": "for_ISBI/runs/train/arssr_ext/selected.json",
+    "source_sha256": "ab975186e9068eeb147c2282f92b57d8e6e75cba1b24a2b732f96a048c722aef"
+  },
+  {
+    "path": "for_ISBI/runs/train/arssr_prob/selected.json",
+    "source_sha256": "487f62c5af373adfa933188ed76ec4aec15b9d3e246484bb0a660cf79d8c4173"
+  },
+  {
+    "path": "for_ISBI/runs/train/dcsrn_ext_x4/selected.json",
+    "source_sha256": "a632adaaab7c91f82324c9a7b50d8655457f869147bf45ced2b7fedce5f3093c"
+  },
+  {
+    "path": "for_ISBI/runs/train/dcsrn_ext_x8/selected.json",
+    "source_sha256": "522e755ca74f4ace7d179663223f921869e0214e1142bc81878fe8c7a5332b2c"
+  },
+  {
+    "path": "for_ISBI/runs/train/dcsrn_prob_x4/selected.json",
+    "source_sha256": "1d4a285ffcfb214f335b688ed949e8e387f5b875321e7aa3e5c41d81ad1c5b90"
+  },
+  {
+    "path": "for_ISBI/runs/train/dcsrn_prob_x8/selected.json",
+    "source_sha256": "f520ea47cfe312d33c009eb3cc52e9bc916db71d82442c6e433e41c12ad0254a"
+  },
+  {
+    "path": "for_ISBI/runs/train/i3net_expa_x4/selected.json",
+    "source_sha256": "1ed744b05f0f4c431abea7aab99667af5c7206d86e7630d49f7c924b52979627"
+  },
+  {
+    "path": "for_ISBI/runs/train/i3net_expa_x4_smoke/selected.json",
+    "source_sha256": "c909edc18735d8ca740e98b8b2300928b69ae836f34d128c954fe7f8b3bd75bd"
+  },
+  {
+    "path": "for_ISBI/runs/train/i3net_expa_x8/selected.json",
+    "source_sha256": "38942dd81847b2dd388b3ec9e35be39dffd854399a3a14b45ddf80f084383219"
+  },
+  {
+    "path": "for_ISBI/runs/train/i3net_expb_x4/selected.json",
+    "source_sha256": "6c3fa19ffc372cfa3c673bd230276107f24d211b6ee988b0d9457835cd56223d"
+  },
+  {
+    "path": "for_ISBI/runs/train/i3net_expb_x8/selected.json",
+    "source_sha256": "4d50c065127391dd7305b3d1cba9885e38f0ab96783accaef4369b281636aaaa"
+  },
+  {
+    "path": "for_ISBI/runs/train/i3net_prob_x4/selected.json",
+    "source_sha256": "7cd0b025fc68130e84f4a4ba293c54210a8172ebdef8ce0d73e3446880934dc9"
+  },
+  {
+    "path": "for_ISBI/runs/train/i3net_prob_x8/selected.json",
+    "source_sha256": "70e4b7adbe0e20a691d433307f3b9274f13573727f02cf0bcf438c9da48a40bb"
+  },
+  {
+    "path": "for_ISBI/runs/train/saint_expa/selected.json",
+    "source_sha256": "35ea12f4374683a0aeae6dbd8b6c84f4f19707fad514c8dcebdcea7325c1ace8"
+  },
+  {
+    "path": "for_ISBI/runs/train/saint_expa_smoke/selected.json",
+    "source_sha256": "4c43dd83b034b2a05347867882249162a55f335d54355f78ae6b520071fa3f62"
+  },
+  {
+    "path": "for_ISBI/runs/train/saint_expb/selected.json",
+    "source_sha256": "502bd2f59e6e415a1c81ce9628dcf1dc05ab6ac3d478845537bfa955fc73ee7f"
+  },
+  {
+    "path": "for_ISBI/runs/train/saint_geo/selected.json",
+    "source_sha256": "4a6b10d36f57c86a03c9af80f4665dfc4e676bee21a7d8ba262aff419d77a916"
+  },
+  {
+    "path": "for_ISBI/runs/train/saint_geo_mixed/selected.json",
+    "source_sha256": "1bf7baf5d23edd79b1c973837d7e99ecd92c39322ab56f6118a15421be137d34"
+  },
+  {
+    "path": "for_ISBI/runs/train/saint_prob/selected.json",
+    "source_sha256": "f5e5a516f47e7aee4949b62220e5ae66197ce09fb6902678019098cfe3530738"
+  },
+  {
+    "path": "for_ISBI/scripts/ablation_posthoc.py",
+    "source_sha256": "7de203871d0d66bdcc555c6239601c5353c1d6b5676cb0e1ec14abed0bb03d32"
+  },
+  {
+    "path": "for_ISBI/scripts/analyze.py",
+    "source_sha256": "e551fec400fc7a1030442a92dff363cfdf9cb244571693749d1f010ba8d79c6d"
+  },
+  {
+    "path": "for_ISBI/scripts/analyze_exposure.py",
+    "source_sha256": "4fd6fb8562e0ecec3a863366743fc7ee5bbf519aade82f3e67af34cf81c59242"
+  },
+  {
+    "path": "for_ISBI/scripts/analyze_geo.py",
+    "source_sha256": "a2a41dc32ea9108aebac789b37d2135100ff7d7f1b54bca07ea60673b546a11d"
+  },
+  {
+    "path": "for_ISBI/scripts/analyze_native.py",
+    "source_sha256": "9c7cd49183f65771eaeaabcd0e4e8b13ceda2fcf8fff104042824f0bd4b49a21"
+  },
+  {
+    "path": "for_ISBI/scripts/consolidate_geometry.py",
+    "source_sha256": "7870076c56262835fe14f0854f28ae52ecde8dabda515bab139b6ed409022be8"
+  },
+  {
+    "path": "for_ISBI/scripts/eval_exposure.py",
+    "source_sha256": "1946e9365f9c58da041fec3f0f848c9de4ba9712bf34787940c47b5f50ee9bab"
+  },
+  {
+    "path": "for_ISBI/scripts/eval_geo.py",
+    "source_sha256": "20fdd5136c39ea6fe29a5b1e01533499662933ff01ee377bb522a9d5d08eaf48"
+  },
+  {
+    "path": "for_ISBI/scripts/eval_native.py",
+    "source_sha256": "58448ed5837972843305fb1242c53a128f672e64e5eddc99470ccaac5d9711fe"
+  },
+  {
+    "path": "for_ISBI/scripts/extend_native.py",
+    "source_sha256": "14565be51a06869932c5f4dc1ddf55d98d26381ca0322762a92f7a8c612ab666"
+  },
+  {
+    "path": "for_ISBI/scripts/fig_geometry_story.py",
+    "source_sha256": "793c123513b0ed21d162335b262ee34262d90a8f1eae65da319eaa955b98406e"
+  },
+  {
+    "path": "for_ISBI/scripts/fig_masks.py",
+    "source_sha256": "8ecfe420cb566d980a2d7b16ac8875477a26bc59cd68bd023c2680135ab7f7a9"
+  },
+  {
+    "path": "for_ISBI/scripts/fig_training.py",
+    "source_sha256": "a8f7b7ffde22e10ea1033bfd67c228dc9fc9b37d375b41954da0f3af8d099a0f"
+  },
+  {
+    "path": "for_ISBI/scripts/freeze_protocol.py",
+    "source_sha256": "8725ae33365fc01aabcd1e7c5d605737681c5fe7289dfbe1516331135a46286c"
+  },
+  {
+    "path": "for_ISBI/scripts/gapcal_posthoc.py",
+    "source_sha256": "5f8a3dfd00869fa07dc81e58aba6bf489a25fba09ccf03df7ec665c277033767"
+  },
+  {
+    "path": "for_ISBI/scripts/hash_inventory.py",
+    "source_sha256": "6d1cb0c2ec7e2d94357c2d0830c63f4d456c6a0fadc3295cec1143d98b1e3d5f"
+  },
+  {
+    "path": "for_ISBI/scripts/make_figures.py",
+    "source_sha256": "753af1ee4fbf17f244df1bf657ca391b37cb70dc03cfe451591b85766bfd1e74"
+  },
+  {
+    "path": "for_ISBI/scripts/make_report_tables.py",
+    "source_sha256": "daff8dd45ad548915576584a8c421381151077228e564702d3c5df9eb64bc53c"
+  },
+  {
+    "path": "for_ISBI/scripts/make_slide_numbers.py",
+    "source_sha256": "3350b67cb4e87c3d16da365a0fd95bb194953144af971e946d76f5dd5f479e56"
+  },
+  {
+    "path": "for_ISBI/scripts/make_slide_numbers_geo.py",
+    "source_sha256": "003d43b9a93633347597c666c9052349987fd91cebc613c50663057c32ea709f"
+  },
+  {
+    "path": "for_ISBI/scripts/prefreeze.py",
+    "source_sha256": "3cf60fdec1176412b5386418b921fb08aaf24d62947dfe80c1fc69d68274b56f"
+  },
+  {
+    "path": "for_ISBI/scripts/qualitative.py",
+    "source_sha256": "8a69f5908ff9a8cd6b2b1b0285a7287651c01ec8d8122d8214e2b88fcac7beea"
+  },
+  {
+    "path": "for_ISBI/scripts/replay_pilot.py",
+    "source_sha256": "53a2f27fb8ad4b1642c28d7b562ac8a6e3c0779f90277d83a04f2c9d43783503"
+  },
+  {
+    "path": "for_ISBI/scripts/run_eval.py",
+    "source_sha256": "92f55c1b19d4b6a61d515ee73de235c43e499581c98e879dff40db762a1aed25"
+  },
+  {
+    "path": "for_ISBI/scripts/significance.py",
+    "source_sha256": "6b67a9f15a6821c3cb0bca3a5962ff94a7b6bec51b6968e9dcd8ae96a258fea8"
+  },
+  {
+    "path": "for_ISBI/scripts/train_exposure.py",
+    "source_sha256": "3b8c3cb8f416536f80fa5b13892a2dd30860f67550af5be2ef0f4470133c56af"
+  },
+  {
+    "path": "for_ISBI/scripts/train_geo.py",
+    "source_sha256": "d37eee7888c13700c7c84fdc76661485557576f117f05962bc8c8ee9bad73889"
+  },
+  {
+    "path": "for_ISBI/scripts/train_geo_mixed.py",
+    "source_sha256": "f491254ae949d6b22a63c63c2d0eafd8424e6aef7902690c282a616300edd916"
+  },
+  {
+    "path": "for_ISBI/scripts/train_native_prob.py",
+    "source_sha256": "af5d1a76f9d14d1b8428b2c0ff3f4bdf0c20c21987d031ada355dcb7b582cb12"
+  },
+  {
+    "path": "for_ISBI/scripts/train_prob.py",
+    "source_sha256": "6096bd4b8c22898028ae626848e5f339ec72f24b186a6f1a8b4f5e2bc5a4b543"
+  },
+  {
+    "path": "for_ISBI/src/isbi/common.py",
+    "source_sha256": "4938a4d8a4a28e584e2945c2d0fb1f9e578c359f7214ef8e5912596a9c6a8971"
+  },
+  {
+    "path": "for_ISBI/src/isbi/evalcore.py",
+    "source_sha256": "b02a989e685afc0d838213ea6a4a31625164253ccf2edee362d681578f00dcab"
+  },
+  {
+    "path": "for_ISBI/src/isbi/exposure.py",
+    "source_sha256": "e81df05fd0a99d6c973a9c110e64271f11b6fb5b7c748a8af1ee8644fafa186b"
+  },
+  {
+    "path": "for_ISBI/src/isbi/figstyle.py",
+    "source_sha256": "368d7d19e4ea8b4a568676b5e3321fa62a754e2b8c0d1774f82de58f8b551500"
+  },
+  {
+    "path": "for_ISBI/src/isbi/models.py",
+    "source_sha256": "e32b29fe957660a58cf0232e3f37ed2ed2e668ee5fb8c98a5a955169c7717d09"
+  },
+  {
+    "path": "for_ISBI/src/isbi/native.py",
+    "source_sha256": "4d7e2c8bef29bcd50f837e0b45b685ee891768bb32be6c45cbd91cb5d04ad3df"
+  },
+  {
+    "path": "for_ISBI/src/isbi/recon.py",
+    "source_sha256": "f6a95f9a3f012b527425da0baa864780dbdc6510404e27473a858303779c7439"
+  },
+  {
+    "path": "for_ISBI/src/isbi/uq.py",
+    "source_sha256": "02df8c27d3c3a1975addee0059d09b70440ab97450d80f3a3a090847562a0d0b"
+  },
+  {
+    "path": "for_ISBI/tests/test_preflight.py",
+    "source_sha256": "762f4bac357970667c6749e6266e16b1d9ff4234927e3fa5c36eabb2ef5e79fa"
+  },
+  {
+    "path": "for_ISBI/tests/test_uq.py",
+    "source_sha256": "d7ae82f5c73e6f16cd4925b272e0859fed54b039f1c1ee14c9a6cd62ced29cac"
+  },
+  {
+    "path": "image_residual/__init__.py",
+    "source_sha256": "22733fcc760411ac3c37cef6a8be937ac54ac88ad26823c55dd21eb20d965489"
+  },
+  {
+    "path": "image_residual/evaluation.py",
+    "source_sha256": "6b235f3b3257b34a4d2247353eed8013cccc8382097fbc2344d4dcc42cb68a1e"
+  },
+  {
+    "path": "image_residual/inference.py",
+    "source_sha256": "485350a653701e97ee1c16313d1d28477c1140666b049cbd9fde1b845f326b98"
+  },
+  {
+    "path": "image_residual/inputs.py",
+    "source_sha256": "559d4fddf1d06e1774d11c9f5342e6ae6f96ad16c9bd9536fd3a8bd808e99ea8"
+  },
+  {
+    "path": "image_residual/losses.py",
+    "source_sha256": "6955c5b7eb9f5cbec7283cbdcb084417fc23b9138320b6ca4c6b5dc0c6583aff"
+  },
+  {
+    "path": "image_residual/masks.py",
+    "source_sha256": "7378612ffcb201512a73c56548545666846b3fdc51563627156e0e3120b14b79"
+  },
+  {
+    "path": "image_residual/model.py",
+    "source_sha256": "9b0236ed8698dc07c0ae896e5dd54358d015cab29196b43e323ff5de091b40af"
+  },
+  {
+    "path": "image_residual/reporting.py",
+    "source_sha256": "f208b2cdd11428baa486ed8b9e9fd9e366e4144034b156bcfbca943f0a8ac870"
+  },
+  {
+    "path": "image_residual/residual_scale.py",
+    "source_sha256": "ddac08eb9e2e1458e70071a01faf61e276fd6f4c7812edf21f83932274ef8e82"
+  },
+  {
+    "path": "image_residual/trainer.py",
+    "source_sha256": "c5213be31f0d590cee7f8f9b8ace4f36abfbd52a9eb074812c18d1108bffc672"
+  },
+  {
+    "path": "ir1_audit_common.py",
+    "source_sha256": "31506732399f3fadd07ae8d8a3317d3ff6a26eb39edd67cc6b3a5eb6056b743d"
+  },
+  {
+    "path": "ir1b1_structure_loss.py",
+    "source_sha256": "ead85737a4164ded4cbcd0f5063d16a259917b10d31633a690550f0b69e82e4e"
+  },
+  {
+    "path": "ir2_components.py",
+    "source_sha256": "9fb63314434b9fd6d59ef85c1b4c6e333c69385a1df8be1e612bbe2c6529109c"
+  },
+  {
+    "path": "ir3c_ixi/__init__.py",
+    "source_sha256": "ffa55609bbd77a84c02bcebb06f080cec62e68921a84547ac658519b89e16dd9"
+  },
+  {
+    "path": "ir3c_ixi/protocol_ixi.py",
+    "source_sha256": "ef3e76e3063ab7b195f664f083b101a57001e3a7bde89a84c2d55f5de514df20"
+  },
+  {
+    "path": "nonuniform_gap_analysis.py",
+    "source_sha256": "8d83f0071cfe97c6912529ac8cc7c24d84dab2afdd65edf711b2210be95951c2"
+  },
+  {
+    "path": "nonuniform_masks.py",
+    "source_sha256": "c4458af5f4fe5305ce57c0eaf6fc6f55aca98acb95c8fdb4be39522cb67b344c"
+  },
+  {
+    "path": "nonuniform_method_adapter.py",
+    "source_sha256": "8e020b926eba9ff14dc0eb7d1130598fb653b5e1b64da33225a9e86a34ad1d78"
+  },
+  {
+    "path": "nu1_corrected_eval.py",
+    "source_sha256": "69dfd67f41183a114ad919d02d4ab0fbe11808e58feed342490210b41f4915a3"
+  },
+  {
+    "path": "runs/IR3C_IXItiny_08Sept/ixi_splits_IR3C_IXItiny_08Sept.json",
+    "source_sha256": "dffd2cafbde3c0e1ea9365833393b1cb6773683ddb5d4f018e0e6abc4d1db8a1"
+  },
+  {
+    "path": "runs/brats_frozen_vae_full_20260716_122401/splits/brats2023_test40.txt",
+    "source_sha256": "6837639709fcab05ea47124d31595ea64222a923dd894ec86ef5fe2ea5a32d57"
+  },
+  {
+    "path": "runs/brats_frozen_vae_full_20260716_122401/splits/brats2023_train.txt",
+    "source_sha256": "744c41ee220522bcc2bbb244be25506bba9311c50f3999a4cb22ee33cbe563ec"
+  },
+  {
+    "path": "runs/brats_frozen_vae_full_20260716_122401/splits/brats2023_val60.txt",
+    "source_sha256": "66848e35771166c89def0c66b2e84dcfd3f133681f7db8d89dc29aca7d3d9947"
+  },
+  {
+    "path": "runs/brats_ir3c_20260902/selected_I3Net.json",
+    "source_sha256": "cfc516d548256ea33819aee081d9481fba4369c61cce78b6d9d69c058837c551"
+  },
+  {
+    "path": "runs/brats_ir3c_20260902/selected_IR3_full.json",
+    "source_sha256": "3036d1f1387e453cb685050d25b31c8eefc294d5702d067566e3d7c966a00e9c"
+  },
+  {
+    "path": "runs/brats_ir3c_20260902/selected_IR3_matched.json",
+    "source_sha256": "145e425eee7210f829a244a75ed4d268522923de1b733d612531aaf65620374c"
+  },
+  {
+    "path": "runs/brats_ir3c_20260902/selected_arssr.json",
+    "source_sha256": "fd0ddf96d47bde140ac24c44390b49b2b8d53efb08733f7e2bf8a9057d1eebe1"
+  },
+  {
+    "path": "runs/brats_ir3c_20260902/selected_arssr_slowlr.json",
+    "source_sha256": "aa972ae610194b9815f6b8257513c36db2a9086b657a3b4d04d94603accb4623"
+  },
+  {
+    "path": "runs/brats_ir3c_20260902/selected_i3net_x2.json",
+    "source_sha256": "0eb1ae3e58b1668867d268fb7fc597dcd9b3a758a435f75a14f767a4aad6a259"
+  },
+  {
+    "path": "runs/brats_ir3c_20260902/selected_i3net_x4.json",
+    "source_sha256": "de585b73ae7fa3e967a9bc47eeb581b6e48d03ccd2d6ad3f328584ab7341538f"
+  },
+  {
+    "path": "runs/brats_ir3c_20260902/selected_i3net_x8.json",
+    "source_sha256": "8f547982a345e274cb884c3806ad8283ed4d10dd42535077f5548f8c504d650c"
+  }
+]

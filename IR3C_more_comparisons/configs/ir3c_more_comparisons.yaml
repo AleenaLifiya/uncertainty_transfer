@@ -1,0 +1,212 @@
+# ============================================================================
+# IR3C_more_comparisons --- adding SAINT (CVPR 2020) and DCSRN (ISBI 2018) to the
+# BraTS through-plane slice-reconstruction comparison.
+#
+# Every protocol value below is INHERITED from configs/ir3c_comparisons.yaml (the
+# authoritative IR3C configuration) and is repeated here only so the experiment is
+# self-describing. `audit_existing_setup.md` records where each value came from and
+# `run_ir3c_more.py --stages preflight` asserts that the inherited values still match
+# the frozen artefacts of runs/brats_ir3c_20260902.
+# ============================================================================
+experiment_id: IR3C_more_comparisons
+parent_experiment: IR3C
+display_name: "IR3C_more_comparisons --- SAINT and DCSRN added to the BraTS through-plane comparison"
+date_planned: "2026-09-15"
+
+# ---- provenance of the reused, read-only prior run -------------------------
+ir3c_run: runs/brats_ir3c_20260902          # splits.json, test_masks.npz, results_per_volume.csv
+ir3c_config: configs/ir3c_comparisons.yaml
+
+# ---- data (INHERITED; identical for every method) --------------------------
+dataset: BraTS-GLI-2023
+modality: t2f
+depth: 153
+in_plane: 240
+p_lo: 1.0
+p_hi: 99.5
+n_train_subjects: 1251
+n_val_subjects: 6
+n_test_subjects: 88
+
+# ---- masks (INHERITED; loaded from the frozen test_masks.npz) --------------
+families: [U0, U1, U2, U3, U4, U5, U6]
+train_strides: [2, 4, 8]
+train_stride_weights: [0.30, 0.35, 0.35]
+test_strides: [2, 4, 8]                     # the three factors this experiment reports
+in_distribution_strides: [2, 4, 8]
+
+# Both new methods require an exactly-uniform acquisition, like I3Net:
+#  * SAINT produces the `factor` interleaved phases of a regularly decimated stack;
+#  * the DCSRN specialists are trained at one fixed stride each.
+# They are therefore scored on U0 only, the same cells I3Net is scored on, so the
+# I3Net / SAINT / DCSRN comparison is exact.
+applicable_families: [U0]
+applicable_strides: [2, 4, 8]
+
+# ---- seeds (INHERITED) -----------------------------------------------------
+seed: 42
+
+# ---- SHARED training budget (INHERITED VERBATIM from IR3C) -----------------
+budget:
+  total_steps: 12510
+  val_every: 1251
+  patience: 4
+  wallclock_limit_h: 12
+
+# ---- equal-scope learning-rate probe ---------------------------------------
+# prompt §7: "If tuning is necessary, use a small predefined search of equal scope for
+# SAINT and DCSRN and select configurations using validation results only."
+# Identical scope for both methods: 3 candidates, the first of which is the upstream
+# default, each run for exactly ONE validation interval (1251 steps) and scored on the
+# VALIDATION matrix only. Test data is never read.
+lr_probe:
+  enabled: true
+  steps: 1251
+  saint_candidates: [1.0e-4, 3.0e-4, 1.0e-5]     # first = upstream option.py default
+  dcsrn_candidates: [1.0e-5, 1.0e-4, 1.0e-3]     # first = upstream Trainer default
+  dcsrn_probe_stride: 4                          # one probe, applied to all three specialists
+
+# ---- SAINT -----------------------------------------------------------------
+saint:
+  repo: IR3C_more_comparisons/repositories/SAINT
+  url: https://github.com/cpeng93/SAINT.git
+  commit_expected: a4a1b8f9c7b74a5c5d00b8b08132ff15a1e65802
+  branch: ir3c_more_comparisons
+  arbitrary_scale: true          # ONE model covers R in {2,4,8} via the meta-kernel
+  RDNconfig: C                   # upstream README command
+  G0: 64
+  RDNkSize: 3
+  n_colors: 3
+  patch_size: 10                 # upstream --patch_size 10 (LR columns along z)
+  batch_size: 120                # upstream train command --batch_size 120
+  optim: Adam
+  lr: 1.0e-4                     # upstream option.py --lr
+  betas: [0.9, 0.999]
+  eps: 1.0e-8
+  weight_decay: 0.0              # upstream option.py --weight_decay 0
+  schedule: step_halving         # upstream --decay_type step --lr_decay 200 --gamma 0.5
+  n_halvings: 1                  # 150 epochs / 200 = 0.75 halvings; 1 across the budget
+  loss: L1                       # upstream --loss 1*L1
+  amp: false                     # upstream trains fp32
+  spacing: [1.0, 1.0, 1.0]       # BraTS-GLI 2023 is 1 mm isotropic
+  inference:
+    chunk: 16                    # batches the per-line loop; no batch statistics in the net
+  stage2:
+    enabled: true
+    n_cache_subjects: 40         # training subjects whose MSR output is cached for the RFN
+    batch_size: 8                # axial slices per RFN step
+    lr: 1.0e-4
+    slab: 16
+  deviations:
+    - "Trained from scratch; SAINT_ckpt/model_comb.pt (MSD-CT pre-training) is NOT loaded,
+       because ArSSR was likewise denied its HCP-1200 pre-training so that no method gets an
+       external-data advantage."
+    - "`gen_diff_thickness` (random z-decimation of the source volume) is not applied. The
+       IR3C protocol fixes the HR grid at D=153 / 1 mm and permits no augmentation; the
+       scale variety it provides comes instead from the protocol's own train_strides."
+    - "One factor per batch with n_slots = factor, instead of a fixed 6 phase slots. The 6
+       slots exist upstream only so x4 and x6 can share a batch; with {2,4,8} they would make
+       6 of 8 targets identically zero at R=2."
+    - "Training factors are {2,4,8}, not upstream's {4,6}, to match the benchmark."
+    - "In-plane extent 240 instead of the hard-coded MSD-CT 512 (code change A2); intensity
+       window [0,1] instead of the hard-coded CT [0,4000] with rounding (A3)."
+    - "Epoch budget replaced by the shared step budget; the step-halving shape is preserved."
+    - "Checkpoint selected on validation (upstream keeps the best test PSNR epoch)."
+    - "The reconstruction spans K*R slices and is TRIMMED (never resized) to D=153."
+
+# ---- DCSRN -----------------------------------------------------------------
+dcsrn:
+  repo: IR3C_more_comparisons/repositories/DCSRN
+  url: https://github.com/YunzeMan/DCSRN.git
+  commit_expected: 72558e272d647aae61e2ab07f3c09221be6a7e2f
+  branch: ir3c_more_comparisons
+  arbitrary_scale: false         # one specialist per R, as the prompt requires
+  scales: [2, 4, 8]
+  layers: 4                      # create_conv_net defaults
+  growth_rate: 24
+  filter_size: 3
+  channels: 1
+  bn_eps: 1.0e-3
+  patch: 64                      # NII2NPY/data_augment.py 64x64x64
+  batch_size: 2                  # dcsrn.Trainer(batch_size=2)
+  optim: Adam
+  lr: 1.0e-5                     # dcsrn.Trainer._get_optimizer default
+  betas: [0.9, 0.999]
+  eps: 1.0e-8
+  schedule: constant             # upstream never decays the learning rate
+  loss: L2                       # reduce_sum((logits-y)^2) / (N*D*H*W)
+  amp: false
+  degradation: slice_selection_then_linear_z   # 1 x 1 x R, in-plane untouched
+  deviations:
+    - "Degradation is through-plane-only (1x1xR slice selection at the frozen IR3C mask
+       positions, then z-only linear interpolation back onto the HR grid) instead of the
+       paper's isotropic k-space truncation. Isotropic degradation is a different
+       reconstruction problem and would invalidate the comparison (prompt §5)."
+    - "Executed through a weight-transplant-verified PyTorch transcription of the official
+       TensorFlow graph, because no CUDA-capable TensorFlow wheel exists for this machine
+       (aarch64 / Python 3.10: tf.test.is_built_with_cuda() is False; TF 1.x is not
+       installable; Docker is unavailable). CPU TensorFlow measures 11.8 s per training
+       step = 41 h per model per scale. The official graph still runs here and is used as
+       the reference: see provenance/DCSRN/port_forward_equivalence.json and
+       port_training_equivalence.json."
+    - "Epoch budget (10 x 3500 iterations) replaced by the shared 12510-step budget."
+    - "Checkpoint selected on validation (upstream keeps the last epoch)."
+    - "One model per scale; NO arbitrary-scale capability is claimed."
+
+# ---- DCSRN trained on the protocol's OWN mask distribution -----------------
+# The primary DCSRN specialists above are trained on uniform masks only, which matches
+# I3Net's and SAINT's applicability and makes the U0 table a like-for-like three-way
+# comparison. But DCSRN is NOT architecturally restricted to uniform spacing: its input is
+# a z-interpolated volume on the full HR grid, so the mask irregularity is absorbed by the
+# interpolant before the network sees it.
+#
+# This variant therefore retrains the three specialists with the family exposure ArSSR and
+# IR3 received -- image_residual.masks.sample_training_mask, ~50 % U0 and the rest spread
+# over U1-U6 with a fresh seed per draw -- and evaluates on all seven families, so DCSRN can
+# sit beside ArSSR and IR3 on the non-uniform grid on equal terms. The stride stays fixed
+# per specialist (the prompt requires one fixed-scale model per R); only the family is mixed.
+dcsrn_mixed:
+  enabled: true
+  name_prefix: DCSRNmix
+  display: "DCSRN (mixed-mask)"
+  scales: [2, 4, 8]
+  train_uniform_prob: 0.5          # the protocol's own value
+  applicable_families: [U0, U1, U2, U3, U4, U5, U6]
+  applicable_strides: [2, 4, 8]
+  # The inference mode is NOT re-probed: the probe on the uniform-trained specialists found
+  # whole-volume and tiled64 within 0.25 dB on validation at every R, so this variant reuses
+  # the per-R mode already chosen there. That keeps the two DCSRN rows differing in TRAINING
+  # only, which is the comparison this variant exists to make.
+  reuse_inference_mode: true
+  deviations:
+    - "Family mixed during training, stride fixed per specialist; ArSSR and IR3 mix both
+       because they are arbitrary-scale. This is a property of fixed-scale methods."
+    - "The z-interpolant is built on the in-plane crop rather than the whole volume --
+       exactly equivalent (z interpolation is pointwise in-plane; asserted per sampler) and
+       ~5x cheaper, which matters because the mask is redrawn every sample."
+
+# ---- evaluation (INHERITED; the shared evaluator, unmodified) --------------
+evaluation:
+  region_primary: missing
+  region_secondary: whole
+  intensity_range: [0.0, 1.0]
+  peak: 1.0
+  ssim_variants: [A_fullslice_current, B_brain_bbox]
+  metric_order: [psnr_masked, psnr_unmasked, ssim, ssim_B_brain_bbox, nmse, mae, bg_haze]
+  aggregation_unit: subject
+  anchoring: none                # no method copies acquired slices; score-neutral, gated
+  paired_test: wilcoxon          # the test the existing report already uses
+  lpips: false                   # not part of the IR3C protocol; see audit §7.1
+
+# ---- comparison methods loaded from the prior run (read-only) --------------
+existing_methods: [nearest, linear, cubic, bicubic, ArSSR, ArSSR_slowlr, I3Net,
+                   IR3_matched, IR3_full]
+
+# ---- qualitative (INHERITED VERBATIM; fixed before any scoring) ------------
+qualitative:
+  subjects: [BraTS-GLI-00001-001, BraTS-GLI-00027-000]
+  cells: [[4, U0], [8, U0]]
+  slices_per_page: 20
+  vmin: 0.0
+  vmax: 1.0
+  err_max: 0.35

@@ -1,0 +1,9 @@
+{
+ "selected_step": 3000,
+ "selected_path": "${UT_ROOT}/for_ISBI/exp_pg/runs/brats_arssr_s43/train/ckpt_step003000.pt",
+ "base_prob": "${UT_ROOT}/for_ISBI/exp_seeds/runs/brats_s43/train/arssr_prob/ckpt_step003000.pt",
+ "sel_nll": -1.5784429212411244,
+ "step0_nll": -1.544241413474083,
+ "train_sec": 1367.2156555652618,
+ "rule": "head only, uniform R2/4/8, min SEL fg NLL (uniform x4+x8), step>0"
+}

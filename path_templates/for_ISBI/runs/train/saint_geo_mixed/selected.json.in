@@ -1,0 +1,8 @@
+{
+ "selected_step": 1500,
+ "selected_path": "${UT_ROOT}/for_ISBI/runs/train/saint_geo_mixed/ckpt_step001500.pt",
+ "rule": "min SEL fg NLL (uniform + jittered + clustered r0, x4+x8), step>0",
+ "sel_nll": -1.4127525703774557,
+ "step0_nll": -1.1040845272234745,
+ "train_sec": 2134.0251698493958
+}

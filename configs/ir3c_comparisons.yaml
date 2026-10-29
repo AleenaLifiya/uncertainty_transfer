@@ -1,0 +1,161 @@
+# ============================================================================
+# IR3C --- adding I3Net (TMI 2024) and ArSSR (J-BHI 2022) to the IR3 comparison
+#
+# Everything the experiment needs is here. Nothing is hard-coded in the drivers
+# (ir3_comparisons.md §11: "A researcher should be able to reproduce a result without
+# having to inspect the source code to discover hidden parameters").
+#
+# The audit that justifies every choice below is IR3C_AUDIT_AND_PLAN.md.
+# ============================================================================
+experiment_id: IR3C
+parent_experiment: IR3
+display_name: "IR3C --- I3Net and ArSSR added to the BraTS through-plane comparison"
+date_planned: "2026-09-02"
+
+# ---- provenance of the reused, read-only prior run -------------------------
+ir3_run: runs/brats_ir3_standalone_20260830_182349
+ir1_run: runs/brats_ir1_image_residual_smoke_20260728_121036   # frozen mask family seeds
+l3_run:  runs/brats_frozen_vae_full_20260716_122401            # split files
+
+# ---- data (IDENTICAL for every method; audit §D rows 1-5) ------------------
+dataset: BraTS-GLI-2023
+modality: t2f
+depth: 153
+in_plane: 240
+p_lo: 1.0
+p_hi: 99.5
+n_train_subjects: 1251
+n_val_subjects: 6
+n_test_subjects: 88
+
+# ---- masks (frozen; audit §D row 6) ----------------------------------------
+families: [U0, U1, U2, U3, U4, U5, U6]
+train_strides: [2, 4, 8]
+train_stride_weights: [0.30, 0.35, 0.35]
+train_uniform_prob: 0.5
+test_strides: [2, 4, 8, 16]
+in_distribution_strides: [2, 4, 8]
+
+# ---- seeds (§12) -----------------------------------------------------------
+seed: 42
+
+# ---- SHARED training budget (§4; audit §F) ---------------------------------
+# Expressed in OPTIMISATION STEPS, not epochs, because one "epoch" is not the same
+# quantity for a full-depth 3D patch loop, a slice-run loop and a coordinate loop.
+# 12510 = exactly 10 IR3 epochs, so IR3 has a checkpoint at the matched budget and can be
+# reported at BOTH the matched budget and its own full 31275-step run.
+budget:
+  total_steps: 12510
+  val_every: 1251
+  patience: 4                  # 4 of 11 validation points; generous against plateaus
+  wallclock_limit_h: 12        # safety valve per model; a hit is REPORTED, never hidden
+ir3_full_budget_steps: 31275   # the published IR3 run, for the budget-advantage table
+
+# ---- method-specific hyperparameters: ORIGINAL VALUES (§5 Option A) --------
+# Every entry is the upstream default. Deviations are listed in `deviations:` and are
+# reproduced in the report's deviation tables.
+i3net:
+  repo: I3Net
+  commit_expected: 30be7ba7b214de62a40be5b311867d9f430e6b2e
+  scales: [2, 4, 8]            # one specialist model per scale (upstream ships x2/x4/x6)
+  lr_slice_patch: 4            # upstream config.py / train.sh
+  in_plane_required: 256       # architectural hard constraint (see adapter docstring)
+  optim: Adam
+  lr: 3.0e-4
+  weight_decay: 1.0e-4
+  betas: [0.9, 0.999]
+  eps: 1.0e-8
+  schedule: cosine_with_warmup
+  warmup_frac: 0.05
+  batch_size: 6                # upstream train.sh
+  loss: L1
+  amp: true
+  applicable_families: [U0]
+  applicable_strides: [2, 4, 8]
+  deviations:
+    - "240x240 -> 256x256 by SYMMETRIC ZERO-PAD (upstream assumes 256; BraTS is 240).
+       Unpadded before scoring; background is already exactly 0, so no information added."
+    - "Intensity normalisation is the project percentile window, not upstream's fixed
+       [0,4095] CT/IXI scale (the scale does not exist for BraTS)."
+    - "No flip augmentation (upstream main.py path uses none; IR3 uses none)."
+    - "Epoch budget replaced by the shared step budget; cosine+warmup shape preserved."
+    - "Checkpoint selected on validation (upstream has no selection: it uses the last epoch)."
+    - "Inference covers ALL slices; upstream test.py discards the first/last `upscale`
+       slices, which the shared evaluator cannot do."
+
+arssr:
+  repo: ArSSR
+  commit_expected: 7e10fe0117efda7091d7ecda45c34a7202439642
+  encoder_name: RDN
+  feature_dim: 128
+  decoder_depth: 8
+  decoder_width: 256
+  optim: Adam
+  lr: 1.0e-4
+  schedule: step_halving
+  n_halvings: 12               # upstream: 2500 epochs / 200 = 12.5 halvings
+  batch_size: 15               # upstream -bs
+  sample_size: 8000            # upstream -ss
+  n_lr: 4                      # LR slices per slab
+  base: 48                     # in-plane training patch side
+  loss: L1
+  amp: false                   # upstream trains in fp32
+  applicable_families: [U0, U1, U2, U3, U4, U5, U6]
+  applicable_strides: [2, 4, 8, 16]
+  inference:
+    z_chunk: 32
+    z_margin: 8
+    slice_batch: 12
+  deviations:
+    - "Through-plane-only degradation (z decimation) instead of upstream isotropic
+       nd.zoom; the task is slice reconstruction, not isotropic SR."
+    - "Query coordinates use SLICE-SELECTION geometry p(z)=j+(z-ret[j])/(ret[j+1]-ret[j])
+       instead of make_coord(hr_shape). Upstream's cell-centre convention is exact for
+       zoom-resampled LR; ours is exact for slice-selected LR, and reduces to z/R when the
+       stride is uniform. It also generalises to the non-uniform families."
+    - "No HCP-1200 pre-trained weights: trained from scratch, so no method gets an
+       external-data advantage."
+    - "Epoch budget replaced by the shared step budget; the 12-halving schedule shape
+       is preserved."
+    - "Checkpoint selected on validation (upstream has no selection)."
+
+# ---- ArSSR LR-schedule sensitivity run (§4, §21) ---------------------------
+# DIAGNOSIS, made from ArSSR's OWN training curve and never from test scores:
+# upstream ArSSR halves the LR 12 times across ~130,000 steps. Preserving that SHAPE over
+# the 12,510-step shared budget halves it every 1,042 steps, so the LR reaches 4.9e-8 --
+# effectively zero -- at 28 % of the budget, and the training loss is flat from step ~3,500
+# onward (-0.3 % over the last 3,500 steps). The model was frozen for roughly 72 % of its
+# budget by the schedule MAPPING, not by anything about the method.
+#
+# ir3_comparisons.md §4: "I specifically want to avoid a situation where one model
+# underperforms simply because it was stopped too early." This run answers whether ArSSR's
+# deficit is a property of the method or an artefact of that mapping. Everything -- budget,
+# seed, data, masks, selection rule, architecture, optimiser, batch, loss -- is identical;
+# ONLY the number of halvings changes, so the LR anneals across the budget instead of
+# vanishing at 28 % of it. Both runs are reported, clearly labelled; the shape-faithful run
+# remains primary.
+arssr_sensitivity:
+  enabled: true
+  name: arssr_slowlr
+  display: "ArSSR (slow-decay LR)"
+  n_halvings: 4          # lr 1e-4 -> 6.25e-6 at the end, vs 4.9e-8 in the primary run
+  rationale: "training loss flat from step ~3500 while lr had already decayed to 1.25e-5"
+
+# ---- evaluation (§8; identical implementation for every method) ------------
+evaluation:
+  region_primary: missing        # ONLY the reconstructed slices
+  region_secondary: whole        # whole volume, reported in its own table
+  intensity_range: [0.0, 1.0]
+  peak: 1.0
+  ssim_variants: [A_fullslice_current, B_brain_bbox]
+  metric_order: [psnr_masked, psnr_unmasked, ssim, ssim_B_brain_bbox, nmse, mae, bg_haze]
+  baselines: [nearest, linear, cubic, bicubic]
+  aggregation_unit: subject      # mean +/- sd across the 88 held-out subjects (§9 Rule 1)
+
+# ---- qualitative (§10) -----------------------------------------------------
+qualitative:
+  subjects: [BraTS-GLI-00001-001, BraTS-GLI-00027-000]
+  cells: [[4, U0], [8, U0]]      # cells where EVERY method (incl. I3Net) is applicable
+  montage_all_missing_slices: true
+  slices_per_page: 20
+  zoom_examples: 3

@@ -1,0 +1,38 @@
+{
+  "selected_step": 11259,
+  "selected_epoch": 0,
+  "selected_path": "checkpoints/DCSRN/DCSRN_x4/DCSRN_x4_step011259.pt",
+  "selected_macro_psnr": 21.510133936767616,
+  "selected_macro_ssim": 0.8483719157883116,
+  "n_candidates": 11,
+  "n_eligible": 1,
+  "criterion": "max macro brain-masked PSNR on missing slices, guardrail macro_ssim >= linear_macro_ssim - 0.01",
+  "guardrail_rejected_all_trained": true,
+  "best_trained_step": 11259,
+  "best_trained_macro_psnr": 21.510133936767616,
+  "best_trained_macro_ssim": 0.8483719157883116,
+  "best_trained_path": "checkpoints/DCSRN/DCSRN_x4/DCSRN_x4_step011259.pt",
+  "selection_note": "The shared SSIM guardrail (macro_ssim >= linear_macro_ssim - 0.01) rejected EVERY trained checkpoint, leaving only the untrained step-0 reference, which is not a result for the method. The checkpoint reported here is therefore the one with the highest VALIDATION macro brain-masked PSNR among trained checkpoints. The guardrail-selected outcome is reported alongside it.",
+  "inference_mode": "tiled64",
+  "superseded_whole_volume_selection": {
+    "selected_step": 0,
+    "selected_macro_psnr": 5.555767707362942,
+    "selected_macro_ssim": 0.7718385870671399,
+    "n_eligible": 1
+  },
+  "method": "DCSRN_x4",
+  "stop_reason": "budget_exhausted",
+  "stopped_at_step": 12510,
+  "total_steps_planned": 12510,
+  "training_hours": 1.1044020243485768,
+  "peak_gpu_gb": 18.653929472,
+  "still_improving_at_stop": false,
+  "budget": {
+    "total_steps": 12510,
+    "val_every": 1251,
+    "patience": 4,
+    "warmup_steps": 0,
+    "n_validations": 10
+  },
+  "checkpoint_dir": "checkpoints/DCSRN/DCSRN_x4"
+}

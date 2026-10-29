@@ -1,0 +1,141 @@
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..7a60b85
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,2 @@
++__pycache__/
++*.pyc
+diff --git a/data/__init__.py b/data/__init__.py
+index e5fae00..35377a7 100644
+--- a/data/__init__.py
++++ b/data/__init__.py
+@@ -1,6 +1,21 @@
+ from importlib import import_module
+ 
+-from dataloader import MSDataLoader
++# IR3C_more_comparisons A5 (torch 1.0 -> torch 2.x compatibility): `dataloader.MSDataLoader`
++# subclasses the torch-1.0 DataLoader internals (`torch._C._update_worker_pids`,
++# `_set_worker_signal_handlers`), which were removed in torch >= 1.1 and cannot be restored.
++# It is only used by the `Data` wrapper below, which this experiment does not use -- the
++# IR3C protocol supplies its own sampler so that every method draws from the SAME prepared
++# volumes. The import is therefore made optional so that `data.srdata` (which holds SAINT's
++# scale geometry, `get_dist` / `get_hr`) remains importable. `Data` raises if constructed.
++try:
++    from dataloader import MSDataLoader
++except ImportError as _e:                       # torch >= 1.1
++    _MSDATALOADER_ERROR = _e
++
++    def MSDataLoader(*a, **k):
++        raise ImportError(
++            "MSDataLoader requires torch 1.0 private APIs removed in torch >= 1.1: "
++            f"{_MSDATALOADER_ERROR}")
+ from torch.utils.data.dataloader import default_collate
+ 
+ class Data:
+diff --git a/data/srdata.py b/data/srdata.py
+index 4dd5c9d..be0592c 100644
+--- a/data/srdata.py
++++ b/data/srdata.py
+@@ -131,13 +131,21 @@ class SRData(data.Dataset):
+         return image.astype('int32'), spacing
+ 
+ 
+-    def get_hr(self, data, factor):
+-        output = np.zeros((6, data.shape[0], data.shape[1]//factor)).astype('int32')
++    def get_hr(self, data, factor, n_slots=6, dtype='int32'):
++        # IR3C_more_comparisons A4: the number of phase slots was hard-coded to 6 because
++        # upstream trains x4 and x6 only. R=8 needs 8 slots, and a single-factor batch wants
++        # exactly `factor` slots (n_slots=None). The upstream default 6 is unchanged.
++        # `dtype` was hard-coded to int32 for the MSD-CT Hounsfield data; BraTS is float32
++        # in [0,1] and would be quantised to zeros. The upstream default is unchanged.
++        n_slots = int(factor) if n_slots is None else max(int(n_slots), int(factor))
++        output = np.zeros((n_slots, data.shape[0], data.shape[1]//factor)).astype(dtype)
+         for i in range(factor):
+             output[i] = data[...,i::factor]
+         return output
+ 
+-    def get_dist(self, spacing, factor):
++    def get_dist(self, spacing, factor, n_slots=6):
++        # IR3C_more_comparisons A4: see get_hr. The upstream default 6 is unchanged.
++        n_slots = int(factor) if n_slots is None else max(int(n_slots), int(factor))
+         x, y = spacing[1], spacing[2]
+         kernel = 3
+         FDM = np.zeros((factor,kernel,kernel,2))
+@@ -148,7 +156,7 @@ class SRData(data.Dataset):
+                     FDM[k][i][j] = [k+factor*i,j]
+ 
+ 
+-        dist = np.zeros((6,kernel,kernel))
++        dist = np.zeros((n_slots,kernel,kernel))
+         center = FDM[0][kernel//2][kernel//2]
+         for k in range(factor):
+             for i in range(kernel):
+diff --git a/model/meta_multi.py b/model/meta_multi.py
+index f9920b6..4707de6 100644
+--- a/model/meta_multi.py
++++ b/model/meta_multi.py
+@@ -1,6 +1,5 @@
+ import torch
+ import torch.nn as nn
+-import scipy.misc
+ 
+ def make_model(args, parent=False):
+     return MSR_RDN(args)
+@@ -164,11 +163,16 @@ class MSR_RDN(nn.Module):
+         return output
+ 
+ 
+-    def marginal_inference(self, inp_vol, weights):
++    def marginal_inference(self, inp_vol, weights, chunk=1):
++        # IR3C_more_comparisons A2: the in-plane extent was hard-coded to the MSD-CT value
++        # 512 (both in `range(512)` and in the final `.view`). It is now read from the input
++        # tensor, so a 240x240 BraTS volume is handled without resizing. `chunk` batches the
++        # per-slice loop; the network is Conv2d+ReLU only (no batch statistics), so a batched
++        # forward is numerically identical to chunk=1, which remains the default.
+         holder = []
+-        for i in range(512):
+-            f__1 = self.SFENet1(inp_vol[i:i+1])
+-            # f__1 = self.SFENet1(inp_vol[i*8:(i+1)*8])
++        n_lines = inp_vol.shape[0]
++        for i in range(0, n_lines, chunk):
++            f__1 = self.SFENet1(inp_vol[i:i+chunk])
+             x = self.SFENet2(f__1)
+             RDBs_out = []
+             for i in range(self.D):
+@@ -186,12 +190,15 @@ class MSR_RDN(nn.Module):
+         comb = []
+         for i in range(weights.size(1)):
+             comb.append(output[:,i])
+-        comb = torch.stack(comb,dim=3).view(output.shape[0],512,output.shape[-1]*weights.size(1))#this'd be 64,64,60
++        comb = torch.stack(comb, dim=3).view(
++            output.shape[0], output.shape[2], output.shape[-1] * weights.size(1))
+         return comb
+ 
+ 
+-    def test(self, inp, dist, factor):
+-        #input in this case should be something like 
++    def test(self, inp, dist, factor, vmin=0, vmax=4000, round_output=True, chunk=1):
++        # IR3C_more_comparisons A3: the output window was hard-coded to the MSD-CT range
++        # [0, 4000] with integer rounding. BraTS is normalised to [0, 1] by the shared
++        # protocol, so the window is now a parameter; the upstream defaults are unchanged.
+         for i in range(factor):
+             if i == 0:
+                 weights = self.GW(dist[:,[i],:,:]).view(1,1,64,3,3)#.expand(8,1,64,3,3)
+@@ -201,10 +208,13 @@ class MSR_RDN(nn.Module):
+         inp_sag = inp[0,0]
+         inp_cor = inp[0,1]
+ 
+-        comb_sag = self.marginal_inference(inp_sag, weights)
+-        comb_cor = self.marginal_inference(inp_cor, weights).permute(1,0,2)
++        comb_sag = self.marginal_inference(inp_sag, weights, chunk=chunk)
++        comb_cor = self.marginal_inference(inp_cor, weights, chunk=chunk).permute(1,0,2)
+ 
+-        comb_sag, comb_cor = torch.clamp(comb_sag,0,4000).round(), torch.clamp(comb_cor,0,4000).round()
++        comb_sag = torch.clamp(comb_sag, vmin, vmax)
++        comb_cor = torch.clamp(comb_cor, vmin, vmax)
++        if round_output:
++            comb_sag, comb_cor = comb_sag.round(), comb_cor.round()
+ 
+         if self.stage == 1:
+             return comb_sag.unsqueeze(0), comb_cor.unsqueeze(0)

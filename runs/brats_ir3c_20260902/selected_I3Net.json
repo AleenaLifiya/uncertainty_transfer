@@ -1,0 +1,74 @@
+{
+  "2": {
+    "selected_step": 5004,
+    "selected_epoch": 5004,
+    "selected_path": "checkpoints/i3net_x2/i3net_x2_step005004.pt",
+    "selected_macro_psnr": 28.778038974574645,
+    "selected_macro_ssim": 0.9786265300766305,
+    "n_candidates": 9,
+    "n_eligible": 9,
+    "criterion": "max macro brain-masked PSNR on missing slices, guardrail macro_ssim >= linear_macro_ssim - 0.01",
+    "method": "i3net_x2",
+    "stop_reason": "early_stop_patience_4",
+    "stopped_at_step": 10008,
+    "total_steps_planned": 12510,
+    "training_hours": 7.952763052715196,
+    "peak_gpu_gb": 19.327917568,
+    "still_improving_at_stop": false,
+    "budget": {
+      "total_steps": 12510,
+      "val_every": 1251,
+      "patience": 4,
+      "warmup_steps": 626,
+      "n_validations": 10
+    }
+  },
+  "4": {
+    "selected_step": 6255,
+    "selected_epoch": 6255,
+    "selected_path": "checkpoints/i3net_x4/i3net_x4_step006255.pt",
+    "selected_macro_psnr": 24.334667546563082,
+    "selected_macro_ssim": 0.9510764697620445,
+    "n_candidates": 10,
+    "n_eligible": 10,
+    "criterion": "max macro brain-masked PSNR on missing slices, guardrail macro_ssim >= linear_macro_ssim - 0.01",
+    "method": "i3net_x4",
+    "stop_reason": "early_stop_patience_4",
+    "stopped_at_step": 11259,
+    "total_steps_planned": 12510,
+    "training_hours": 5.560342060128848,
+    "peak_gpu_gb": 19.340935168,
+    "still_improving_at_stop": false,
+    "budget": {
+      "total_steps": 12510,
+      "val_every": 1251,
+      "patience": 4,
+      "warmup_steps": 626,
+      "n_validations": 10
+    }
+  },
+  "8": {
+    "selected_step": 3753,
+    "selected_epoch": 3753,
+    "selected_path": "checkpoints/i3net_x8/i3net_x8_step003753.pt",
+    "selected_macro_psnr": 20.800412728337328,
+    "selected_macro_ssim": 0.9072497301599175,
+    "n_candidates": 8,
+    "n_eligible": 8,
+    "criterion": "max macro brain-masked PSNR on missing slices, guardrail macro_ssim >= linear_macro_ssim - 0.01",
+    "method": "i3net_x8",
+    "stop_reason": "early_stop_patience_4",
+    "stopped_at_step": 8757,
+    "total_steps_planned": 12510,
+    "training_hours": 4.29562956571579,
+    "peak_gpu_gb": 19.360416768,
+    "still_improving_at_stop": false,
+    "budget": {
+      "total_steps": 12510,
+      "val_every": 1251,
+      "patience": 4,
+      "warmup_steps": 626,
+      "n_validations": 10
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+ "name": "arssr_ext (UNIFORM-trained, from scratch)",
+ "init": "${UT_ROOT}/runs/brats_ir3c_20260902/checkpoints/arssr_slowlr/arssr_slowlr_step000000.pt",
+ "selected_step": 27500,
+ "selected_path": "${UT_ROOT}/for_ISBI/exp_uniform_arssr/runs/train/arssr_ext/ckpt_step027500.pt",
+ "val_psnr": 22.947851308610097,
+ "val_linear": 23.004826868529552,
+ "beats_linear": false,
+ "steps_run": 35000,
+ "train_hours": 4.574057775338491,
+ "rule": "best SEL val PSNR, uniform x4+x8 masks only; training masks uniform only"
+}

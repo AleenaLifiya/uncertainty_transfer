@@ -1,0 +1,24 @@
+[
+  {
+    "path": "ArSSR",
+    "url": "https://github.com/iwuqing/ArSSR.git",
+    "commit": "7e10fe0117efda7091d7ecda45c34a7202439642"
+  },
+  {
+    "path": "I3Net",
+    "url": "https://github.com/eeeric-code/I3Net.git",
+    "commit": "30be7ba7b214de62a40be5b311867d9f430e6b2e"
+  },
+  {
+    "path": "IR3C_more_comparisons/repositories/SAINT",
+    "url": "https://github.com/cpeng93/SAINT.git",
+    "commit": "a4a1b8f9c7b74a5c5d00b8b08132ff15a1e65802",
+    "patch": "tools/patches/SAINT.patch"
+  },
+  {
+    "path": "IR3C_more_comparisons/repositories/DCSRN",
+    "url": "https://github.com/YunzeMan/DCSRN.git",
+    "commit": "72558e272d647aae61e2ab07f3c09221be6a7e2f",
+    "patch": "tools/patches/DCSRN.patch"
+  }
+]

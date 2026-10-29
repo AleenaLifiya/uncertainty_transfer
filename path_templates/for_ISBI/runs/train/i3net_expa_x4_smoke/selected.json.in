@@ -1,0 +1,19 @@
+{
+ "name": "i3net_expa_x4_smoke",
+ "selected_step": 4,
+ "selected_path": "${UT_ROOT}/for_ISBI/runs/train/i3net_expa_x4_smoke/ckpt_step000004.pt",
+ "start_uniform_psnr": 22.756170079537636,
+ "sel": {
+  "step": 4,
+  "nll": -1.0397877097129822,
+  "uniform_psnr": 22.756222149500246,
+  "ok": true
+ },
+ "n_eligible": 1,
+ "patterns": [
+  "jittered",
+  "clustered"
+ ],
+ "rule": "min SEL fg NLL over variant families; SEL uniform PSNR >= start - 0.2 dB",
+ "train_sec": 159.36359071731567
+}

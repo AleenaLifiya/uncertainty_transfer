@@ -1,0 +1,13 @@
+{
+ "selected_checkpoints": {
+  "saint_prob": "${UT_ROOT}/for_ISBI/runs/train/saint_prob/ckpt_step004500.pt",
+  "i3net_prob_x4": "${UT_ROOT}/for_ISBI/runs/train/i3net_prob_x4/ckpt_step003500.pt",
+  "i3net_prob_x8": "${UT_ROOT}/for_ISBI/runs/train/i3net_prob_x8/ckpt_step003500.pt"
+ },
+ "T": 20,
+ "mc_rule_passed": true,
+ "n_test": 51,
+ "median_fit_case_wall_sec": 60.14483642578125,
+ "frozen_at": "2026-10-17T09:12:21.508102",
+ "note": "checkpoints by prespecified SEL rule; T and n_test by PROTOCOL.md run-order rules"
+}

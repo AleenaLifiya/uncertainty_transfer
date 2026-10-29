@@ -1,0 +1,8 @@
+{
+ "selected_step": 3000,
+ "selected_path": "${UT_ROOT}/for_ISBI/runs/train/saint_geo/ckpt_step003000.pt",
+ "rule": "min SEL fg NLL (uniform x4+x8), step>0",
+ "sel_nll": -1.6896134267250698,
+ "step0_nll": -1.5487989236911137,
+ "train_sec": 2379.268573284149
+}

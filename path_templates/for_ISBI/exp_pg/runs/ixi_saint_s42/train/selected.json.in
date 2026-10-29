@@ -1,0 +1,9 @@
+{
+ "selected_step": 3000,
+ "selected_path": "${UT_ROOT}/for_ISBI/exp_pg/runs/ixi_saint_s42/train/ckpt_step003000.pt",
+ "base_prob": "${UT_ROOT}/for_ISBI/exp_ixi/runs/train/saint_prob/ckpt_step004000.pt",
+ "sel_nll": -1.5976288259029388,
+ "step0_nll": -1.531767761707306,
+ "train_sec": 65.1705367565155,
+ "rule": "head only, uniform R2/4/8, min SEL fg NLL (uniform x4+x8), step>0"
+}

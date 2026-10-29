@@ -1,0 +1,26 @@
+{
+ "name": "saint_prob",
+ "selected_step": 2500,
+ "val": {
+  "step": 2500.0,
+  "psnr": 25.395283139990127,
+  "nll": -1.6234617854158084,
+  "bg_haze": 0.0007375802172948875
+ },
+ "source_val": {
+  "step": 0.0,
+  "psnr": 25.417751505117753,
+  "nll": -1.3892537349214156,
+  "bg_haze": 0.0008359422730184417
+ },
+ "n_eligible": 6,
+ "rule": "phase-2 checkpoints only; min val NLL s.t. PSNR >= src-0.2 dB and haze <= src+0.002",
+ "head_warm": 2000,
+ "lr_head": 0.001,
+ "steps": 5000,
+ "lr": 2e-05,
+ "bs": 8,
+ "source": "checkpoints/SAINT/SAINT_rfn/SAINT_rfn_step011259.pt",
+ "selected_path": "${UT_ROOT}/for_ISBI/exp_seeds/runs/brats_s43/train/saint_prob/ckpt_step002500.pt",
+ "train_hours": null
+}

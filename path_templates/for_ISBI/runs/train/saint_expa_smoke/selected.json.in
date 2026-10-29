@@ -1,0 +1,19 @@
+{
+ "name": "saint_expa_smoke",
+ "selected_step": 4,
+ "selected_path": "${UT_ROOT}/for_ISBI/runs/train/saint_expa_smoke/ckpt_step000004.pt",
+ "start_uniform_psnr": 22.38160201080587,
+ "sel": {
+  "step": 4,
+  "nll": -0.5753859356045723,
+  "uniform_psnr": 22.38149987228808,
+  "ok": true
+ },
+ "n_eligible": 1,
+ "patterns": [
+  "jittered",
+  "clustered"
+ ],
+ "rule": "min SEL fg NLL over variant families; SEL uniform PSNR >= start - 0.2 dB",
+ "train_sec": 147.68174934387207
+}

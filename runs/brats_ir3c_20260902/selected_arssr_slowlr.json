@@ -1,0 +1,24 @@
+{
+  "selected_step": 12510,
+  "selected_epoch": 12510,
+  "selected_path": "checkpoints/arssr_slowlr/arssr_slowlr_step012510.pt",
+  "selected_macro_psnr": 20.546967601089854,
+  "selected_macro_ssim": 0.9217850167541656,
+  "n_candidates": 11,
+  "n_eligible": 11,
+  "criterion": "max macro brain-masked PSNR on missing slices, guardrail macro_ssim >= linear_macro_ssim - 0.01",
+  "method": "arssr_slowlr",
+  "stop_reason": "budget_exhausted",
+  "stopped_at_step": 12510,
+  "total_steps_planned": 12510,
+  "training_hours": 3.882436516152488,
+  "peak_gpu_gb": 15.774157312,
+  "still_improving_at_stop": true,
+  "budget": {
+    "total_steps": 12510,
+    "val_every": 1251,
+    "patience": 4,
+    "warmup_steps": 0,
+    "n_validations": 10
+  }
+}

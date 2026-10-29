@@ -1,0 +1,17 @@
+# Experiment environment versions (Python 3.10). GPU runs require a matching CUDA PyTorch build.
+numpy==1.26.4
+scipy==1.15.3
+pandas==2.3.3
+matplotlib==3.7.5
+torch==2.12.1+cu130
+torchvision==0.27.1+cu130
+nibabel==5.4.2
+scikit-image==0.25.2
+monai==1.6.0
+omegaconf==2.3.0
+einops==0.7.0
+tqdm==4.68.3
+Pillow==12.2.0
+pytorch-lightning==1.9.5
+torchmetrics==0.11.4
+transformers==4.30.2

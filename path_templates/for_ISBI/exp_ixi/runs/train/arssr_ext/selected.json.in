@@ -1,0 +1,10 @@
+{
+ "selected_step": 4360,
+ "selected_path": "${UT_ROOT}/for_ISBI/exp_ixi/runs/train/arssr_ext/ckpt_step004360.pt",
+ "val_psnr": 21.217984184638695,
+ "val_linear": 22.749573601426732,
+ "beats_linear": false,
+ "init": "${UT_ROOT}/for_ISBI/exp_uniform_arssr/runs/train/arssr_ext/ckpt_step027500.pt",
+ "train_hours": 0.46711928731865354,
+ "rule": "best SEL brain-PSNR, uniform x4+x8; training masks uniform only"
+}

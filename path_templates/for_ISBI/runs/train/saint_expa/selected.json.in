@@ -1,0 +1,19 @@
+{
+ "name": "saint_expa",
+ "selected_step": 3000,
+ "selected_path": "${UT_ROOT}/for_ISBI/runs/train/saint_expa/ckpt_step003000.pt",
+ "start_uniform_psnr": 25.402513639025813,
+ "sel": {
+  "step": 3000,
+  "nll": -1.3283891671647627,
+  "uniform_psnr": 25.410996638332445,
+  "ok": true
+ },
+ "n_eligible": 6,
+ "patterns": [
+  "jittered",
+  "clustered"
+ ],
+ "rule": "min SEL fg NLL over variant families; SEL uniform PSNR >= start - 0.2 dB",
+ "train_sec": 3119.6863639354706
+}

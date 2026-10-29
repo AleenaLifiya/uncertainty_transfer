@@ -1,0 +1,14 @@
+{
+ "name": "arssr_prob",
+ "selected_step": 4000,
+ "selected_path": "${UT_ROOT}/for_ISBI/runs/train/arssr_prob/ckpt_step004000.pt",
+ "source": "${UT_ROOT}/for_ISBI/runs/train/arssr_ext/ckpt_step022500.pt",
+ "start_psnr": 20.109756933391647,
+ "sel_psnr": 21.22280003863253,
+ "sel_nll": -0.5700316968141124,
+ "n_eligible": 3,
+ "head_warm": 2000,
+ "rule": "phase-2; dropout-off val PSNR >= start-0.2 dB and MC(T=5)-mean val PSNR >= start-0.5 dB; min val fg NLL; fallback best MC-mean PSNR",
+ "sel_psnr_mc5": 20.672892545869313,
+ "train_hours": 1.317361843585968
+}

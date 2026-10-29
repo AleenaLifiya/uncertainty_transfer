@@ -1,0 +1,14 @@
+{
+ "name": "dcsrn_prob_x8",
+ "selected_step": 3500,
+ "selected_path": "${UT_ROOT}/for_ISBI/runs/train/dcsrn_prob_x8/ckpt_step003500.pt",
+ "source": "${UT_ROOT}/for_ISBI/runs/train/dcsrn_ext_x8/ckpt_step020000.pt",
+ "start_psnr": 18.872882990717425,
+ "sel_psnr": 15.623745704485453,
+ "sel_nll": -0.12689335132017732,
+ "n_eligible": 0,
+ "head_warm": 1500,
+ "rule": "phase-2; dropout-off val PSNR >= start-0.2 dB and MC(T=5)-mean val PSNR >= start-0.5 dB; min val fg NLL; fallback best MC-mean PSNR",
+ "sel_psnr_mc5": 12.708066361811332,
+ "train_hours": 0.5254537601603402
+}

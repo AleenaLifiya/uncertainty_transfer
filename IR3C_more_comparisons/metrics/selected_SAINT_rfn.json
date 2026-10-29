@@ -1,0 +1,25 @@
+{
+  "selected_step": 11259,
+  "selected_epoch": 11259,
+  "selected_path": "checkpoints/SAINT/SAINT_rfn/SAINT_rfn_step011259.pt",
+  "selected_macro_psnr": 26.32763642074074,
+  "selected_macro_ssim": 0.9559427481410625,
+  "n_candidates": 11,
+  "n_eligible": 11,
+  "criterion": "max macro brain-masked PSNR on missing slices, guardrail macro_ssim >= linear_macro_ssim - 0.01",
+  "method": "SAINT_rfn",
+  "stop_reason": "budget_exhausted",
+  "stopped_at_step": 12510,
+  "total_steps_planned": 12510,
+  "training_hours": 2.08827286084493,
+  "peak_gpu_gb": 7.022080512,
+  "still_improving_at_stop": false,
+  "budget": {
+    "total_steps": 12510,
+    "val_every": 1251,
+    "patience": 4,
+    "warmup_steps": 0,
+    "n_validations": 10
+  },
+  "checkpoint_dir": "checkpoints/SAINT/SAINT_rfn"
+}

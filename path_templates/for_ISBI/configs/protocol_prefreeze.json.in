@@ -1,0 +1,8 @@
+{
+ "selected_checkpoints": {
+  "saint_prob": "${UT_ROOT}/for_ISBI/runs/train/saint_prob/ckpt_step004500.pt",
+  "i3net_prob_x4": "${UT_ROOT}/for_ISBI/runs/train/i3net_prob_x4/ckpt_step003500.pt",
+  "i3net_prob_x8": "${UT_ROOT}/for_ISBI/runs/train/i3net_prob_x8/ckpt_step003500.pt"
+ },
+ "T": 20
+}

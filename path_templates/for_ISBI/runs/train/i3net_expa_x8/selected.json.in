@@ -1,0 +1,19 @@
+{
+ "name": "i3net_expa_x8",
+ "selected_step": 3000,
+ "selected_path": "${UT_ROOT}/for_ISBI/runs/train/i3net_expa_x8/ckpt_step003000.pt",
+ "start_uniform_psnr": 22.635726541924743,
+ "sel": {
+  "step": 3000,
+  "nll": -1.063341060032447,
+  "uniform_psnr": 22.670594600967167,
+  "ok": true
+ },
+ "n_eligible": 6,
+ "patterns": [
+  "jittered",
+  "clustered"
+ ],
+ "rule": "min SEL fg NLL over variant families; SEL uniform PSNR >= start - 0.2 dB",
+ "train_sec": 6000.645149707794
+}

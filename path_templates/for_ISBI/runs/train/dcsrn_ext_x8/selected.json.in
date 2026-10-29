@@ -1,0 +1,12 @@
+{
+ "name": "dcsrn_ext_x8",
+ "source": "checkpoints/DCSRN/DCSRNmix_x8/DCSRNmix_x8_step008757.pt",
+ "selected_step": 20000,
+ "selected_path": "${UT_ROOT}/for_ISBI/runs/train/dcsrn_ext_x8/ckpt_step020000.pt",
+ "val_psnr": 18.872882990717425,
+ "val_linear": 18.592385273714488,
+ "beats_linear": true,
+ "steps_run": 30000,
+ "train_hours": 3.391776266362932,
+ "rule": "best SEL val PSNR on own families U0/U2/U4/U6"
+}

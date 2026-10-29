@@ -1,0 +1,14 @@
+{
+ "name": "arssr_prob (UNIFORM-trained)",
+ "selected_step": 3000,
+ "selected_path": "${UT_ROOT}/for_ISBI/exp_uniform_arssr/runs/train/arssr_prob/ckpt_step003000.pt",
+ "source": "${UT_ROOT}/for_ISBI/exp_uniform_arssr/runs/train/arssr_ext/ckpt_step027500.pt",
+ "start_psnr": 22.947851308610097,
+ "sel_psnr": 24.370598878611773,
+ "sel_nll": -1.5551503151655197,
+ "n_eligible": 3,
+ "head_warm": 2000,
+ "rule": "phase-2; dropout-off val PSNR >= start-0.2 dB and MC(T=5)-mean val PSNR >= start-0.5 dB; min val fg NLL; fallback best MC-mean PSNR (uniform val masks)",
+ "sel_psnr_mc5": 23.428848488011912,
+ "train_hours": 0.6787700339158376
+}
