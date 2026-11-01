@@ -1,6 +1,6 @@
 # Uncertainty Transfer in Through-Plane MRI Reconstruction
 
-Code and numerical results for **“Different Gaps, Different Maps? Transfer of Calibrated Uncertainty from Regular to Irregular Slice Sampling in Through-Plane MRI Reconstruction”**, by Aleena Lifiya Jeffy, Mohammed Q. Alkhatib, Marouane Tliba, Aladine Chitouani, and Nour Aburaed (ISBI manuscript).
+Code and numerical results for **“Different Gaps, Different Maps? Transfer of Calibrated Uncertainty from Regular to Irregular Slice Sampling in Through-Plane MRI Reconstruction”**, by Aleena Lifiya Jeffy, Mohammed Q. Alkhatib, Marouane Tliba, Aladine Chetouani, and Nour Aburaed (ISBI manuscript).
 
 ## Paper summary
 
@@ -8,7 +8,7 @@ Voxel-wise uncertainty in MRI reconstruction is commonly calibrated using regula
 
 We compare SAINT, which requires interpolation onto a regular input grid, ArSSR, which queries positions between acquired slices, and linear interpolation. Uncertainty is estimated using learned Laplace distributions with Monte Carlo dropout or a post-hoc error-scale model. Both approaches are tested with and without explicit gap-geometry features. Model training, post-hoc fitting, and calibration use regular sampling only; all calibration parameters are frozen before irregular-sampling evaluation. Patients are separated into model-selection, fitting, calibration, and test groups.
 
-Under clustered sampling, nominal 90% intervals without geometry cover as little as 59% of evaluated voxels. Adding geometry to the post-hoc model improves coverage by 6–23 percentage points, reaching 78–92%, and also improves learned uncertainty. Native reconstructions transfer more reliably than the regridded SAINT pipeline, which retains under-coverage. Three fine-tuning seeds, patient-level statistical comparisons, and FIT/CAL reassignment analyses assess robustness. These experiments demonstrate the importance of acquisition geometry for uncertainty transfer under synthetic sampling shifts; they do not establish clinical reliability.
+Under clustered sampling, nominal 90% intervals without geometry cover as little as 49% of evaluated voxels. At 4-fold undersampling, adding geometry to the post-hoc model improves coverage by 6–23 percentage points, reaching 78–92%. Learned intervals gain less and still under-cover (55–86%). Native reconstructions transfer more reliably than the regridded SAINT pipeline, which retains under-coverage. Three fine-tuning seeds, patient-level statistical comparisons, and FIT/CAL reassignment analyses assess robustness. These experiments demonstrate the importance of acquisition geometry for uncertainty transfer under synthetic sampling shifts; they do not establish clinical reliability.
 
 ## Clone and install
 
@@ -38,6 +38,8 @@ Outputs:
 - [`seeds_summary.csv`](for_ISBI/exp_seeds/results/seeds_summary.csv): coverage, interval score, AUSE/MAE, UCE, and ENCE, aggregated across seeds.
 - [`seeds_dcov.csv`](for_ISBI/exp_seeds/results/seeds_dcov.csv): clustered-minus-uniform coverage change.
 - [`REPORT.md`](for_ISBI/results/significance_v2/REPORT.md): patient-level repeated-measures ANOVA and paired comparisons for the final paper design.
+
+**Interval score, AUSE/MAE and UCE** for every method, dataset, undersampling factor and sampling pattern (referred to in the paper's Evaluation paragraph): [`results/uq_metrics_all.md`](results/uq_metrics_all.md) (tables) and [`results/uq_metrics_all.csv`](results/uq_metrics_all.csv). Regenerate with `python for_ISBI/exp_seeds/scripts/export_uq_metrics.py` after `aggregate_seeds.py`.
 
 The scripts overwrite their derived summaries in this clone. Original per-case metric CSVs remain the analysis inputs.
 
@@ -81,7 +83,7 @@ See [THIRD_PARTY.md](THIRD_PARTY.md) for upstream sources and license boundaries
   title = {Different Gaps, Different Maps? Transfer of Calibrated Uncertainty
            from Regular to Irregular Slice Sampling in Through-Plane MRI Reconstruction},
   author = {Jeffy, Aleena Lifiya and Alkhatib, Mohammed Q. and Tliba, Marouane
-            and Chitouani, Aladine and Aburaed, Nour},
+            and Chetouani, Aladine and Aburaed, Nour},
   year = {2026},
   note = {ISBI manuscript; code repository},
   howpublished = {\url{https://github.com/AleenaLifiya/uncertainty_transfer}}
